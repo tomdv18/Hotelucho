@@ -3,8 +3,6 @@
 
 #include <cliente.h>
 
-#define MAXSIZE 1024
-
 enum estado_habitacion{
     disponible,
     ocupado,

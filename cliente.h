@@ -1,32 +1,33 @@
 #ifndef CLIENTE_H
 #define CLIENTE_H
-
-#define MAXSIZE 1024
+#include <string>
 
 class Cliente {
 private:
-    int id;
-    char nombre[MAXSIZE];
+    int dni;
+    std::string nombre;
     int telefono;
-    char direccion[MAXSIZE];
+    std::string direccion;
 
 public:
-    Cliente();
-    Cliente(int id, char nombre[MAXSIZE],int telefono, char direccion[MAXSIZE]);
+    Cliente(int dni, std::string nombre,int telefono, std::string direccion);
 
-    bool cambiar_telefono(int telefonoNuevo);
+    void cambiar_telefono(int telefonoNuevo);
 
-    bool cambiar_direccion(char direccion[MAXSIZE]);
+    //bool cambiar_direccion(std::string  direccion);
+
+    int get_dni();
 
     /*
      * No queremos permitir que alguien haga copias
-     */
+     
     Cliente(const Cliente&) = delete;
     Cliente& operator=(const Cliente&) = delete;
 
-    /*Move semantics*/
+    //Move semantics
     Cliente(Cliente&&) = default;
     Cliente& operator=(Cliente&&) = default;
+    */
 };
 
 

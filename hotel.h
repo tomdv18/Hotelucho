@@ -1,27 +1,52 @@
 #ifndef HOTEL_H
 #define HOTEL_H
+#include <string>
+#include <vector>
 
-#include <habitacion.h>
-#include <cliente.h>
-#define MAXSIZE 1024
+#include "cliente.h"
+#include "habitacion.h"
+
 
 
 class Hotel {
 private:
-    char nombre[MAXSIZE];
+    std::string nombre;
     int ocupacion;
     int capacidad;
-    Habitacion * Habitaciones;
-    Cliente * clientes;
+    int porcentajeOcupacion;
+    std::vector<Habitacion> habitaciones;
+    std::vector<Cliente> clientes;
     
+    Habitacion  * get_habitacion(int numero, int piso);
+    Cliente *  get_cliente(int dni);
 
 public:
-    Hotel(char nombre[MAXSIZE]);
+    Hotel(std::string nombre);
 
-    int agregar_habitacion();
+    int agregar_habitacion(int numero, int piso, int capacidad);
+    
+    int eliminar_habitacion(const int numero, const int piso);
 
-    int crear_reserva();
- 
+    int comenzar_mantenimiento(int numero, int piso);
+
+    int terminar_mantenimiento(int numero, int piso);
+
+    int finalizar_reserva(int numero, int piso);
+
+    bool existe_habitacion(int numero, int piso);
+
+    int crear_reserva(int numero, int piso, int dni_cliente, std::string nombre, int telefonoCl,std::string direccion);
+
+    bool existe_cliente(const int dni);
+
+    bool habitacion_disponible(int numero, int piso);
+
+    int get_capacidad();
+
+    int get_ocupacion();
+
+    int get_ocupacion_porcentual();
+
 
     /*
      * No queremos permitir que alguien haga copias

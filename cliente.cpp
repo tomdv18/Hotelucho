@@ -1,16 +1,20 @@
 #include "cliente.h"
 
-#include <string.h>
-#define MAXSIZE 1024
+#include <string>
 
 
-Cliente::Cliente(int id, char nombre[MAXSIZE],int telefono, char direccion[MAXSIZE]){
+
+Cliente::Cliente(int dni, std::string  nombre,int telefono, std::string direccion)  : dni(dni), nombre(nombre), telefono(telefono), direccion(direccion){
 }
 
-bool Cliente::cambiar_telefono(int telefonoNuevo){
+void Cliente::cambiar_telefono(int telefonoNuevo){
     telefono = telefonoNuevo;
 }
 
-bool Cliente::cambiar_direccion(char direccionNueva[MAXSIZE]){
-    memcpy(direccion, &direccionNueva, MAXSIZE);
+int Cliente::get_dni(){
+    return dni;
 }
+/*
+bool Cliente::cambiar_direccion(std::string  direccionNueva){
+    direccion(direccionNueva);
+}*/

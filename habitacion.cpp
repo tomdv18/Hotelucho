@@ -4,7 +4,7 @@
 #define MAXSIZE 1024
 
 
-Habitacion::Habitacion(int numero, int piso, int capacidad)  {
+Habitacion::Habitacion(int numero, int piso, int capacidad) : numero(numero), piso(piso), capacidad(capacidad) {
     estado = disponible;
     clienteActual = nullptr;
 
@@ -32,4 +32,15 @@ void Habitacion::reservar(Cliente * clienteReserva){
         estado = ocupado;
         clienteActual = clienteReserva;
     }
+}
+
+int Habitacion::get_numero(){
+    return numero;
+}
+int Habitacion::get_piso(){
+    return piso;
+}
+
+int Habitacion::get_capacidad(){
+    return capacidad;
 }

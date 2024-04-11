@@ -1,7 +1,6 @@
 #ifndef HABITACION_H
 #define HABITACION_H
-
-#include <cliente.h>
+#include "cliente.h"
 
 enum estado_habitacion{
     disponible,
@@ -31,17 +30,24 @@ public:
 
     void reservar(Cliente * clienteReserva);
 
-    
+    int get_piso();
+
+    int get_numero();
+
+    int get_capacidad();
+
 
     /*
      * No queremos permitir que alguien haga copias
-     */
+    
     Habitacion(const Habitacion&) = delete;
     Habitacion& operator=(const Habitacion&) = delete;
 
-    /*Move semantics*/
+    //Move semantics
     Habitacion(Habitacion&&) = default;
     Habitacion& operator=(Habitacion&&) = default;
+
+    */
 };
 
 

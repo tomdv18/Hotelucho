@@ -14,10 +14,15 @@ public:
 
     void cambiar_telefono(int telefonoNuevo);
 
-    //bool cambiar_direccion(std::string  direccion);
+    void cambiar_direccion(std::string  direccion);
 
     int get_dni();
 
+    int get_telefono();
+
+    std::string get_nombre();
+
+    std::string get_direccion();
     /*
      * No queremos permitir que alguien haga copias
      

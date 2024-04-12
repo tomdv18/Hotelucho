@@ -7,6 +7,7 @@
 
 
 Hotel::Hotel(std::string nombreHotel) : nombre(nombreHotel), ocupacion(0),capacidad(0),porcentajeOcupacion(0) {
+std::cout << "Hotel creado, bienvenido a " << nombre<< std::endl;
 }
 
 int Hotel::agregar_habitacion(const int numero, const int piso, const int capacidadHabitacion){
@@ -37,7 +38,6 @@ int Hotel::eliminar_habitacion(const int numero, const int piso){
     }
     return ERROR;
 }
-
 bool Hotel::existe_cliente(const int dni){
     
     for (Cliente & c : clientes){

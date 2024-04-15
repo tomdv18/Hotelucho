@@ -32,6 +32,7 @@ int Hotel::eliminar_habitacion(const int numero, const int piso){
     }
     for (auto hab = habitaciones.begin(); hab != habitaciones.end(); ++hab) {
         if (hab->get_numero() == numero && hab->get_piso() == piso) {
+            capacidad = capacidad - hab->get_capacidad();
             habitaciones.erase(hab);
             return 0;
         }
@@ -79,6 +80,8 @@ int Hotel::finalizar_reserva(int numero, int piso){
     }
     Habitacion* hab = get_habitacion(numero, piso);
     hab->terminar_reserva();
+    ocupacion = ocupacion - hab->get_capacidad();
+    porcentajeOcupacion = ocupacion *100 / capacidad;
     return 0;
 }
 
@@ -126,6 +129,14 @@ Cliente* Hotel::get_cliente(int dni){
         if(cli.get_dni() == dni) cliente = &cli;
     }
     return cliente;
+}
+
+int Hotel::cantidad_habitaciones(){
+    return habitaciones.size();
+}
+
+int Hotel::cantidad_clientes_registrados(){
+    return clientes.size();
 }
 
 int Hotel::get_capacidad(){

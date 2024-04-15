@@ -41,6 +41,10 @@ public:
 
     bool habitacion_disponible(int numero, int piso);
 
+    int cantidad_clientes_registrados();
+
+    int cantidad_habitaciones();
+
     int get_capacidad();
 
     int get_ocupacion();

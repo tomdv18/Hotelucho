@@ -1,5 +1,5 @@
-tests/CMakeFiles/test_habitacion.dir/test_habitacion.cpp.o: \
- /home/tom/Desktop/Hotelucho/tests/test_habitacion.cpp \
+tests/CMakeFiles/test_hotel.dir/test_hotel.cpp.o: \
+ /home/tom/Desktop/Hotelucho/tests/test_hotel.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -131,10 +131,15 @@ tests/CMakeFiles/test_habitacion.dir/test_habitacion.cpp.o: \
  /home/tom/Desktop/Hotelucho/tests/../habitacion.h \
  /home/tom/Desktop/Hotelucho/tests/../cliente.h \
  /home/tom/Desktop/Hotelucho/tests/../cliente.h \
+ /home/tom/Desktop/Hotelucho/tests/../hotel.h /usr/include/c++/11/vector \
+ /usr/include/c++/11/bits/stl_uninitialized.h \
+ /usr/include/c++/11/bits/stl_vector.h \
+ /usr/include/c++/11/bits/stl_bvector.h \
+ /usr/include/c++/11/bits/vector.tcc \
+ /home/tom/Desktop/Hotelucho/tests/../habitacion.h \
  /home/tom/Desktop/Hotelucho/external/googletest/googletest/include/gtest/gtest.h \
  /usr/include/c++/11/cstddef /usr/include/c++/11/limits \
- /usr/include/c++/11/memory /usr/include/c++/11/bits/stl_uninitialized.h \
- /usr/include/c++/11/bits/stl_tempbuf.h \
+ /usr/include/c++/11/memory /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
  /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
  /usr/include/c++/11/bits/uses_allocator.h \
@@ -178,10 +183,7 @@ tests/CMakeFiles/test_habitacion.dir/test_habitacion.cpp.o: \
  /usr/include/c++/11/bits/stl_multiset.h \
  /usr/include/c++/11/bits/erase_if.h /usr/include/c++/11/sstream \
  /usr/include/c++/11/istream /usr/include/c++/11/bits/istream.tcc \
- /usr/include/c++/11/bits/sstream.tcc /usr/include/c++/11/vector \
- /usr/include/c++/11/bits/stl_vector.h \
- /usr/include/c++/11/bits/stl_bvector.h \
- /usr/include/c++/11/bits/vector.tcc \
+ /usr/include/c++/11/bits/sstream.tcc \
  /home/tom/Desktop/Hotelucho/external/googletest/googletest/include/gtest/gtest-assertion-result.h \
  /home/tom/Desktop/Hotelucho/external/googletest/googletest/include/gtest/gtest-message.h \
  /home/tom/Desktop/Hotelucho/external/googletest/googletest/include/gtest/internal/gtest-port.h \

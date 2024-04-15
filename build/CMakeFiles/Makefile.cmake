@@ -77,6 +77,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "tests/CMakeFiles/test_cliente.dir/DependInfo.cmake"
   "tests/CMakeFiles/test_habitacion.dir/DependInfo.cmake"
+  "tests/CMakeFiles/test_hotel.dir/DependInfo.cmake"
   "external/googletest/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
   "external/googletest/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
   "external/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"

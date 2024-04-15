@@ -134,6 +134,7 @@ external/googletest/googletest/clean: external/googletest/googletest/CMakeFiles/
 # Recursive "all" directory target.
 tests/all: tests/CMakeFiles/test_cliente.dir/all
 tests/all: tests/CMakeFiles/test_habitacion.dir/all
+tests/all: tests/CMakeFiles/test_hotel.dir/all
 .PHONY : tests/all
 
 # Recursive "preinstall" directory target.
@@ -143,6 +144,7 @@ tests/preinstall:
 # Recursive "clean" directory target.
 tests/clean: tests/CMakeFiles/test_cliente.dir/clean
 tests/clean: tests/CMakeFiles/test_habitacion.dir/clean
+tests/clean: tests/CMakeFiles/test_hotel.dir/clean
 .PHONY : tests/clean
 
 #=============================================================================
@@ -180,12 +182,12 @@ tests/CMakeFiles/test_habitacion.dir/all: external/googletest/googletest/CMakeFi
 tests/CMakeFiles/test_habitacion.dir/all: external/googletest/googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_habitacion.dir/build.make tests/CMakeFiles/test_habitacion.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_habitacion.dir/build.make tests/CMakeFiles/test_habitacion.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tom/Desktop/Hotelucho/build/CMakeFiles --progress-num=12,13,14 "Built target test_habitacion"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tom/Desktop/Hotelucho/build/CMakeFiles --progress-num=12,13,14,15 "Built target test_habitacion"
 .PHONY : tests/CMakeFiles/test_habitacion.dir/all
 
 # Build rule for subdir invocation for target.
 tests/CMakeFiles/test_habitacion.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tom/Desktop/Hotelucho/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tom/Desktop/Hotelucho/build/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_habitacion.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/tom/Desktop/Hotelucho/build/CMakeFiles 0
 .PHONY : tests/CMakeFiles/test_habitacion.dir/rule
@@ -198,6 +200,33 @@ test_habitacion: tests/CMakeFiles/test_habitacion.dir/rule
 tests/CMakeFiles/test_habitacion.dir/clean:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_habitacion.dir/build.make tests/CMakeFiles/test_habitacion.dir/clean
 .PHONY : tests/CMakeFiles/test_habitacion.dir/clean
+
+#=============================================================================
+# Target rules for target tests/CMakeFiles/test_hotel.dir
+
+# All Build rule for target.
+tests/CMakeFiles/test_hotel.dir/all: external/googletest/googletest/CMakeFiles/gtest.dir/all
+tests/CMakeFiles/test_hotel.dir/all: external/googletest/googletest/CMakeFiles/gtest_main.dir/all
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tom/Desktop/Hotelucho/build/CMakeFiles --progress-num=16,17,18,19,20 "Built target test_hotel"
+.PHONY : tests/CMakeFiles/test_hotel.dir/all
+
+# Build rule for subdir invocation for target.
+tests/CMakeFiles/test_hotel.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tom/Desktop/Hotelucho/build/CMakeFiles 9
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_hotel.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tom/Desktop/Hotelucho/build/CMakeFiles 0
+.PHONY : tests/CMakeFiles/test_hotel.dir/rule
+
+# Convenience name for target.
+test_hotel: tests/CMakeFiles/test_hotel.dir/rule
+.PHONY : test_hotel
+
+# clean rule for target.
+tests/CMakeFiles/test_hotel.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/clean
+.PHONY : tests/CMakeFiles/test_hotel.dir/clean
 
 #=============================================================================
 # Target rules for target external/googletest/googlemock/CMakeFiles/gmock.dir

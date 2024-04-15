@@ -34,6 +34,22 @@ void Habitacion::reservar(Cliente * clienteReserva){
     }
 }
 
+int Habitacion::get_dni_cliente(){
+    if (clienteActual == nullptr){
+        return -1;
+    }
+    return clienteActual->get_dni();
+}
+
+bool Habitacion::get_nombre_cliente(std::string &nombre){
+    if (clienteActual == nullptr){
+        return false;
+    }
+    nombre =  clienteActual->get_nombre();
+    return true;
+}
+
+
 int Habitacion::get_numero(){
     return numero;
 }

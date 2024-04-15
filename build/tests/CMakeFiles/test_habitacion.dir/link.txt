@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/test_habitacion.dir/test_habitacion.cpp.o CMakeFiles/test_habitacion.dir/__/habitacion.cpp.o -o test_habitacion  ../lib/libgtest.a ../lib/libgtest_main.a ../lib/libgtest.a 
+/usr/bin/c++ CMakeFiles/test_habitacion.dir/test_habitacion.cpp.o CMakeFiles/test_habitacion.dir/__/habitacion.cpp.o CMakeFiles/test_habitacion.dir/__/cliente.cpp.o -o test_habitacion  ../lib/libgtest.a ../lib/libgtest_main.a ../lib/libgtest.a 

@@ -6,6 +6,7 @@
 /home/tom/Desktop/Hotelucho/build/CMakeFiles/install/strip.dir
 /home/tom/Desktop/Hotelucho/build/tests/CMakeFiles/test_cliente.dir
 /home/tom/Desktop/Hotelucho/build/tests/CMakeFiles/test_habitacion.dir
+/home/tom/Desktop/Hotelucho/build/tests/CMakeFiles/test_hotel.dir
 /home/tom/Desktop/Hotelucho/build/tests/CMakeFiles/edit_cache.dir
 /home/tom/Desktop/Hotelucho/build/tests/CMakeFiles/rebuild_cache.dir
 /home/tom/Desktop/Hotelucho/build/tests/CMakeFiles/list_install_components.dir

@@ -188,6 +188,19 @@ test_habitacion/fast:
 .PHONY : test_habitacion/fast
 
 #=============================================================================
+# Target rules for targets named test_hotel
+
+# Build rule for target.
+test_hotel: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_hotel
+.PHONY : test_hotel
+
+# fast build rule for target.
+test_hotel/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/build
+.PHONY : test_hotel/fast
+
+#=============================================================================
 # Target rules for targets named gmock
 
 # Build rule for target.
@@ -257,6 +270,7 @@ help:
 	@echo "... gtest_main"
 	@echo "... test_cliente"
 	@echo "... test_habitacion"
+	@echo "... test_hotel"
 .PHONY : help
 
 

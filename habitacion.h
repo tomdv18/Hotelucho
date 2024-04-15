@@ -30,6 +30,10 @@ public:
 
     void reservar(Cliente * clienteReserva);
 
+    int get_dni_cliente();
+
+    bool get_nombre_cliente(std::string &nombre);
+
     int get_piso();
 
     int get_numero();

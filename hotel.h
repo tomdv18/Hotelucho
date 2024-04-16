@@ -6,8 +6,6 @@
 #include "cliente.h"
 #include "habitacion.h"
 
-
-
 class Hotel {
 private:
     std::string nombre;
@@ -43,6 +41,8 @@ public:
 
     std::vector<int> habitaciones_por_piso(int piso);
 
+    std::vector<std::string> habitaciones_disponibles();
+
     int cantidad_clientes_registrados();
 
     int cantidad_habitaciones();
@@ -52,6 +52,8 @@ public:
     int get_ocupacion();
 
     int get_ocupacion_porcentual();
+
+    std::string get_nombre();
 
 
     /*

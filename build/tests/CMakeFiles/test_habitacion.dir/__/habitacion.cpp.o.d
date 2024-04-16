@@ -1,7 +1,8 @@
 tests/CMakeFiles/test_habitacion.dir/__/habitacion.cpp.o: \
- /home/tom/Desktop/Hotelucho/habitacion.cpp /usr/include/stdc-predef.h \
- /home/tom/Desktop/Hotelucho/habitacion.h \
- /home/tom/Desktop/Hotelucho/cliente.h /usr/include/c++/11/string \
+ /home/tom/Desktop/Hotel/Hotelucho/habitacion.cpp \
+ /usr/include/stdc-predef.h \
+ /home/tom/Desktop/Hotel/Hotelucho/habitacion.h \
+ /home/tom/Desktop/Hotel/Hotelucho/cliente.h /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \

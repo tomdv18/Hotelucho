@@ -1,4 +1,4 @@
-# Install script for directory: /home/tom/Desktop/Hotelucho
+# Install script for directory: /home/tom/Desktop/Hotel/Hotelucho
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,12 +44,12 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/tom/Desktop/Hotelucho/build/tests/cmake_install.cmake")
+  include("/home/tom/Desktop/Hotel/Hotelucho/build/tests/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/tom/Desktop/Hotelucho/build/external/googletest/cmake_install.cmake")
+  include("/home/tom/Desktop/Hotel/Hotelucho/build/external/googletest/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -60,5 +60,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/tom/Desktop/Hotelucho/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/tom/Desktop/Hotel/Hotelucho/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

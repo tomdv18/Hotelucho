@@ -1,6 +1,6 @@
 tests/CMakeFiles/test_hotel.dir/__/hotel.cpp.o: \
- /home/tom/Desktop/Hotelucho/hotel.cpp /usr/include/stdc-predef.h \
- /home/tom/Desktop/Hotelucho/hotel.h /usr/include/c++/11/string \
+ /home/tom/Desktop/Hotel/Hotelucho/hotel.cpp /usr/include/stdc-predef.h \
+ /home/tom/Desktop/Hotel/Hotelucho/hotel.h /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -132,10 +132,11 @@ tests/CMakeFiles/test_hotel.dir/__/hotel.cpp.o: \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/tom/Desktop/Hotelucho/cliente.h \
- /home/tom/Desktop/Hotelucho/habitacion.h /usr/include/c++/11/iostream \
- /usr/include/c++/11/ostream /usr/include/c++/11/ios \
- /usr/include/c++/11/exception /usr/include/c++/11/bits/exception_ptr.h \
+ /home/tom/Desktop/Hotel/Hotelucho/cliente.h \
+ /home/tom/Desktop/Hotel/Hotelucho/habitacion.h \
+ /usr/include/c++/11/iostream /usr/include/c++/11/ostream \
+ /usr/include/c++/11/ios /usr/include/c++/11/exception \
+ /usr/include/c++/11/bits/exception_ptr.h \
  /usr/include/c++/11/bits/cxxabi_init_exception.h \
  /usr/include/c++/11/typeinfo /usr/include/c++/11/bits/nested_exception.h \
  /usr/include/c++/11/bits/ios_base.h \

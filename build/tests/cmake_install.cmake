@@ -1,4 +1,4 @@
-# Install script for directory: /home/tom/Desktop/Hotelucho/tests
+# Install script for directory: /home/tom/Desktop/Hotel/Hotelucho/tests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

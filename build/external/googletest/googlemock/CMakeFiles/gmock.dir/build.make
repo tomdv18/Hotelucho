@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tom/Desktop/Hotelucho
+CMAKE_SOURCE_DIR = /home/tom/Desktop/Hotel/Hotelucho
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tom/Desktop/Hotelucho/build
+CMAKE_BINARY_DIR = /home/tom/Desktop/Hotel/Hotelucho/build
 
 # Include any dependencies generated for this target.
 include external/googletest/googlemock/CMakeFiles/gmock.dir/depend.make
@@ -72,16 +72,16 @@ include external/googletest/googlemock/CMakeFiles/gmock.dir/flags.make
 external/googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: external/googletest/googlemock/CMakeFiles/gmock.dir/flags.make
 external/googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: ../external/googletest/googlemock/src/gmock-all.cc
 external/googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: external/googletest/googlemock/CMakeFiles/gmock.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tom/Desktop/Hotelucho/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object external/googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
-	cd /home/tom/Desktop/Hotelucho/build/external/googletest/googlemock && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT external/googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o -MF CMakeFiles/gmock.dir/src/gmock-all.cc.o.d -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/tom/Desktop/Hotelucho/external/googletest/googlemock/src/gmock-all.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tom/Desktop/Hotel/Hotelucho/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object external/googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
+	cd /home/tom/Desktop/Hotel/Hotelucho/build/external/googletest/googlemock && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT external/googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o -MF CMakeFiles/gmock.dir/src/gmock-all.cc.o.d -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/tom/Desktop/Hotel/Hotelucho/external/googletest/googlemock/src/gmock-all.cc
 
 external/googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gmock.dir/src/gmock-all.cc.i"
-	cd /home/tom/Desktop/Hotelucho/build/external/googletest/googlemock && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tom/Desktop/Hotelucho/external/googletest/googlemock/src/gmock-all.cc > CMakeFiles/gmock.dir/src/gmock-all.cc.i
+	cd /home/tom/Desktop/Hotel/Hotelucho/build/external/googletest/googlemock && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tom/Desktop/Hotel/Hotelucho/external/googletest/googlemock/src/gmock-all.cc > CMakeFiles/gmock.dir/src/gmock-all.cc.i
 
 external/googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gmock.dir/src/gmock-all.cc.s"
-	cd /home/tom/Desktop/Hotelucho/build/external/googletest/googlemock && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tom/Desktop/Hotelucho/external/googletest/googlemock/src/gmock-all.cc -o CMakeFiles/gmock.dir/src/gmock-all.cc.s
+	cd /home/tom/Desktop/Hotel/Hotelucho/build/external/googletest/googlemock && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tom/Desktop/Hotel/Hotelucho/external/googletest/googlemock/src/gmock-all.cc -o CMakeFiles/gmock.dir/src/gmock-all.cc.s
 
 # Object files for target gmock
 gmock_OBJECTS = \
@@ -93,19 +93,19 @@ gmock_EXTERNAL_OBJECTS =
 lib/libgmock.a: external/googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
 lib/libgmock.a: external/googletest/googlemock/CMakeFiles/gmock.dir/build.make
 lib/libgmock.a: external/googletest/googlemock/CMakeFiles/gmock.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tom/Desktop/Hotelucho/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../../lib/libgmock.a"
-	cd /home/tom/Desktop/Hotelucho/build/external/googletest/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock.dir/cmake_clean_target.cmake
-	cd /home/tom/Desktop/Hotelucho/build/external/googletest/googlemock && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gmock.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tom/Desktop/Hotel/Hotelucho/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../../lib/libgmock.a"
+	cd /home/tom/Desktop/Hotel/Hotelucho/build/external/googletest/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock.dir/cmake_clean_target.cmake
+	cd /home/tom/Desktop/Hotel/Hotelucho/build/external/googletest/googlemock && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gmock.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 external/googletest/googlemock/CMakeFiles/gmock.dir/build: lib/libgmock.a
 .PHONY : external/googletest/googlemock/CMakeFiles/gmock.dir/build
 
 external/googletest/googlemock/CMakeFiles/gmock.dir/clean:
-	cd /home/tom/Desktop/Hotelucho/build/external/googletest/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock.dir/cmake_clean.cmake
+	cd /home/tom/Desktop/Hotel/Hotelucho/build/external/googletest/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock.dir/cmake_clean.cmake
 .PHONY : external/googletest/googlemock/CMakeFiles/gmock.dir/clean
 
 external/googletest/googlemock/CMakeFiles/gmock.dir/depend:
-	cd /home/tom/Desktop/Hotelucho/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tom/Desktop/Hotelucho /home/tom/Desktop/Hotelucho/external/googletest/googlemock /home/tom/Desktop/Hotelucho/build /home/tom/Desktop/Hotelucho/build/external/googletest/googlemock /home/tom/Desktop/Hotelucho/build/external/googletest/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tom/Desktop/Hotel/Hotelucho /home/tom/Desktop/Hotel/Hotelucho/external/googletest/googlemock /home/tom/Desktop/Hotel/Hotelucho/build /home/tom/Desktop/Hotel/Hotelucho/build/external/googletest/googlemock /home/tom/Desktop/Hotel/Hotelucho/build/external/googletest/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : external/googletest/googlemock/CMakeFiles/gmock.dir/depend
 

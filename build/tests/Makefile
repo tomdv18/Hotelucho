@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tom/Desktop/Hotelucho
+CMAKE_SOURCE_DIR = /home/tom/Desktop/Hotel/Hotelucho
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tom/Desktop/Hotelucho/build
+CMAKE_BINARY_DIR = /home/tom/Desktop/Hotel/Hotelucho/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/tom/Desktop/Hotelucho/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/tom/Desktop/Hotelucho/build/CMakeFiles /home/tom/Desktop/Hotelucho/build/tests//CMakeFiles/progress.marks
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tom/Desktop/Hotelucho/build/CMakeFiles 0
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/tom/Desktop/Hotel/Hotelucho/build/CMakeFiles /home/tom/Desktop/Hotel/Hotelucho/build/tests//CMakeFiles/progress.marks
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tom/Desktop/Hotel/Hotelucho/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/clean
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,22 +148,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/tom/Desktop/Hotelucho/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 tests/CMakeFiles/test_cliente.dir/rule:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_cliente.dir/rule
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_cliente.dir/rule
 .PHONY : tests/CMakeFiles/test_cliente.dir/rule
 
 # Convenience name for target.
@@ -172,12 +172,12 @@ test_cliente: tests/CMakeFiles/test_cliente.dir/rule
 
 # fast build rule for target.
 test_cliente/fast:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_cliente.dir/build.make tests/CMakeFiles/test_cliente.dir/build
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_cliente.dir/build.make tests/CMakeFiles/test_cliente.dir/build
 .PHONY : test_cliente/fast
 
 # Convenience name for target.
 tests/CMakeFiles/test_habitacion.dir/rule:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_habitacion.dir/rule
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_habitacion.dir/rule
 .PHONY : tests/CMakeFiles/test_habitacion.dir/rule
 
 # Convenience name for target.
@@ -186,12 +186,12 @@ test_habitacion: tests/CMakeFiles/test_habitacion.dir/rule
 
 # fast build rule for target.
 test_habitacion/fast:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_habitacion.dir/build.make tests/CMakeFiles/test_habitacion.dir/build
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_habitacion.dir/build.make tests/CMakeFiles/test_habitacion.dir/build
 .PHONY : test_habitacion/fast
 
 # Convenience name for target.
 tests/CMakeFiles/test_hotel.dir/rule:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_hotel.dir/rule
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_hotel.dir/rule
 .PHONY : tests/CMakeFiles/test_hotel.dir/rule
 
 # Convenience name for target.
@@ -200,7 +200,7 @@ test_hotel: tests/CMakeFiles/test_hotel.dir/rule
 
 # fast build rule for target.
 test_hotel/fast:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/build
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/build
 .PHONY : test_hotel/fast
 
 __/cliente.o: __/cliente.cpp.o
@@ -208,9 +208,9 @@ __/cliente.o: __/cliente.cpp.o
 
 # target to build an object file
 __/cliente.cpp.o:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_cliente.dir/build.make tests/CMakeFiles/test_cliente.dir/__/cliente.cpp.o
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_habitacion.dir/build.make tests/CMakeFiles/test_habitacion.dir/__/cliente.cpp.o
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/__/cliente.cpp.o
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_cliente.dir/build.make tests/CMakeFiles/test_cliente.dir/__/cliente.cpp.o
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_habitacion.dir/build.make tests/CMakeFiles/test_habitacion.dir/__/cliente.cpp.o
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/__/cliente.cpp.o
 .PHONY : __/cliente.cpp.o
 
 __/cliente.i: __/cliente.cpp.i
@@ -218,9 +218,9 @@ __/cliente.i: __/cliente.cpp.i
 
 # target to preprocess a source file
 __/cliente.cpp.i:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_cliente.dir/build.make tests/CMakeFiles/test_cliente.dir/__/cliente.cpp.i
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_habitacion.dir/build.make tests/CMakeFiles/test_habitacion.dir/__/cliente.cpp.i
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/__/cliente.cpp.i
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_cliente.dir/build.make tests/CMakeFiles/test_cliente.dir/__/cliente.cpp.i
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_habitacion.dir/build.make tests/CMakeFiles/test_habitacion.dir/__/cliente.cpp.i
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/__/cliente.cpp.i
 .PHONY : __/cliente.cpp.i
 
 __/cliente.s: __/cliente.cpp.s
@@ -228,9 +228,9 @@ __/cliente.s: __/cliente.cpp.s
 
 # target to generate assembly for a file
 __/cliente.cpp.s:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_cliente.dir/build.make tests/CMakeFiles/test_cliente.dir/__/cliente.cpp.s
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_habitacion.dir/build.make tests/CMakeFiles/test_habitacion.dir/__/cliente.cpp.s
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/__/cliente.cpp.s
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_cliente.dir/build.make tests/CMakeFiles/test_cliente.dir/__/cliente.cpp.s
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_habitacion.dir/build.make tests/CMakeFiles/test_habitacion.dir/__/cliente.cpp.s
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/__/cliente.cpp.s
 .PHONY : __/cliente.cpp.s
 
 __/habitacion.o: __/habitacion.cpp.o
@@ -238,8 +238,8 @@ __/habitacion.o: __/habitacion.cpp.o
 
 # target to build an object file
 __/habitacion.cpp.o:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_habitacion.dir/build.make tests/CMakeFiles/test_habitacion.dir/__/habitacion.cpp.o
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/__/habitacion.cpp.o
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_habitacion.dir/build.make tests/CMakeFiles/test_habitacion.dir/__/habitacion.cpp.o
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/__/habitacion.cpp.o
 .PHONY : __/habitacion.cpp.o
 
 __/habitacion.i: __/habitacion.cpp.i
@@ -247,8 +247,8 @@ __/habitacion.i: __/habitacion.cpp.i
 
 # target to preprocess a source file
 __/habitacion.cpp.i:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_habitacion.dir/build.make tests/CMakeFiles/test_habitacion.dir/__/habitacion.cpp.i
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/__/habitacion.cpp.i
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_habitacion.dir/build.make tests/CMakeFiles/test_habitacion.dir/__/habitacion.cpp.i
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/__/habitacion.cpp.i
 .PHONY : __/habitacion.cpp.i
 
 __/habitacion.s: __/habitacion.cpp.s
@@ -256,8 +256,8 @@ __/habitacion.s: __/habitacion.cpp.s
 
 # target to generate assembly for a file
 __/habitacion.cpp.s:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_habitacion.dir/build.make tests/CMakeFiles/test_habitacion.dir/__/habitacion.cpp.s
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/__/habitacion.cpp.s
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_habitacion.dir/build.make tests/CMakeFiles/test_habitacion.dir/__/habitacion.cpp.s
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/__/habitacion.cpp.s
 .PHONY : __/habitacion.cpp.s
 
 __/hotel.o: __/hotel.cpp.o
@@ -265,7 +265,7 @@ __/hotel.o: __/hotel.cpp.o
 
 # target to build an object file
 __/hotel.cpp.o:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/__/hotel.cpp.o
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/__/hotel.cpp.o
 .PHONY : __/hotel.cpp.o
 
 __/hotel.i: __/hotel.cpp.i
@@ -273,7 +273,7 @@ __/hotel.i: __/hotel.cpp.i
 
 # target to preprocess a source file
 __/hotel.cpp.i:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/__/hotel.cpp.i
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/__/hotel.cpp.i
 .PHONY : __/hotel.cpp.i
 
 __/hotel.s: __/hotel.cpp.s
@@ -281,7 +281,7 @@ __/hotel.s: __/hotel.cpp.s
 
 # target to generate assembly for a file
 __/hotel.cpp.s:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/__/hotel.cpp.s
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/__/hotel.cpp.s
 .PHONY : __/hotel.cpp.s
 
 test_cliente.o: test_cliente.cpp.o
@@ -289,7 +289,7 @@ test_cliente.o: test_cliente.cpp.o
 
 # target to build an object file
 test_cliente.cpp.o:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_cliente.dir/build.make tests/CMakeFiles/test_cliente.dir/test_cliente.cpp.o
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_cliente.dir/build.make tests/CMakeFiles/test_cliente.dir/test_cliente.cpp.o
 .PHONY : test_cliente.cpp.o
 
 test_cliente.i: test_cliente.cpp.i
@@ -297,7 +297,7 @@ test_cliente.i: test_cliente.cpp.i
 
 # target to preprocess a source file
 test_cliente.cpp.i:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_cliente.dir/build.make tests/CMakeFiles/test_cliente.dir/test_cliente.cpp.i
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_cliente.dir/build.make tests/CMakeFiles/test_cliente.dir/test_cliente.cpp.i
 .PHONY : test_cliente.cpp.i
 
 test_cliente.s: test_cliente.cpp.s
@@ -305,7 +305,7 @@ test_cliente.s: test_cliente.cpp.s
 
 # target to generate assembly for a file
 test_cliente.cpp.s:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_cliente.dir/build.make tests/CMakeFiles/test_cliente.dir/test_cliente.cpp.s
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_cliente.dir/build.make tests/CMakeFiles/test_cliente.dir/test_cliente.cpp.s
 .PHONY : test_cliente.cpp.s
 
 test_habitacion.o: test_habitacion.cpp.o
@@ -313,7 +313,7 @@ test_habitacion.o: test_habitacion.cpp.o
 
 # target to build an object file
 test_habitacion.cpp.o:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_habitacion.dir/build.make tests/CMakeFiles/test_habitacion.dir/test_habitacion.cpp.o
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_habitacion.dir/build.make tests/CMakeFiles/test_habitacion.dir/test_habitacion.cpp.o
 .PHONY : test_habitacion.cpp.o
 
 test_habitacion.i: test_habitacion.cpp.i
@@ -321,7 +321,7 @@ test_habitacion.i: test_habitacion.cpp.i
 
 # target to preprocess a source file
 test_habitacion.cpp.i:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_habitacion.dir/build.make tests/CMakeFiles/test_habitacion.dir/test_habitacion.cpp.i
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_habitacion.dir/build.make tests/CMakeFiles/test_habitacion.dir/test_habitacion.cpp.i
 .PHONY : test_habitacion.cpp.i
 
 test_habitacion.s: test_habitacion.cpp.s
@@ -329,7 +329,7 @@ test_habitacion.s: test_habitacion.cpp.s
 
 # target to generate assembly for a file
 test_habitacion.cpp.s:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_habitacion.dir/build.make tests/CMakeFiles/test_habitacion.dir/test_habitacion.cpp.s
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_habitacion.dir/build.make tests/CMakeFiles/test_habitacion.dir/test_habitacion.cpp.s
 .PHONY : test_habitacion.cpp.s
 
 test_hotel.o: test_hotel.cpp.o
@@ -337,7 +337,7 @@ test_hotel.o: test_hotel.cpp.o
 
 # target to build an object file
 test_hotel.cpp.o:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/test_hotel.cpp.o
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/test_hotel.cpp.o
 .PHONY : test_hotel.cpp.o
 
 test_hotel.i: test_hotel.cpp.i
@@ -345,7 +345,7 @@ test_hotel.i: test_hotel.cpp.i
 
 # target to preprocess a source file
 test_hotel.cpp.i:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/test_hotel.cpp.i
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/test_hotel.cpp.i
 .PHONY : test_hotel.cpp.i
 
 test_hotel.s: test_hotel.cpp.s
@@ -353,7 +353,7 @@ test_hotel.s: test_hotel.cpp.s
 
 # target to generate assembly for a file
 test_hotel.cpp.s:
-	cd /home/tom/Desktop/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/test_hotel.cpp.s
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_hotel.dir/build.make tests/CMakeFiles/test_hotel.dir/test_hotel.cpp.s
 .PHONY : test_hotel.cpp.s
 
 # Help Target
@@ -400,6 +400,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/tom/Desktop/Hotelucho/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

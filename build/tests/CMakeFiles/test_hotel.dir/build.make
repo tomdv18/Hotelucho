@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tom/Desktop/Hotelucho
+CMAKE_SOURCE_DIR = /home/tom/Desktop/Hotel/Hotelucho
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tom/Desktop/Hotelucho/build
+CMAKE_BINARY_DIR = /home/tom/Desktop/Hotel/Hotelucho/build
 
 # Include any dependencies generated for this target.
 include tests/CMakeFiles/test_hotel.dir/depend.make
@@ -72,58 +72,58 @@ include tests/CMakeFiles/test_hotel.dir/flags.make
 tests/CMakeFiles/test_hotel.dir/test_hotel.cpp.o: tests/CMakeFiles/test_hotel.dir/flags.make
 tests/CMakeFiles/test_hotel.dir/test_hotel.cpp.o: ../tests/test_hotel.cpp
 tests/CMakeFiles/test_hotel.dir/test_hotel.cpp.o: tests/CMakeFiles/test_hotel.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tom/Desktop/Hotelucho/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/test_hotel.dir/test_hotel.cpp.o"
-	cd /home/tom/Desktop/Hotelucho/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/test_hotel.dir/test_hotel.cpp.o -MF CMakeFiles/test_hotel.dir/test_hotel.cpp.o.d -o CMakeFiles/test_hotel.dir/test_hotel.cpp.o -c /home/tom/Desktop/Hotelucho/tests/test_hotel.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tom/Desktop/Hotel/Hotelucho/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/test_hotel.dir/test_hotel.cpp.o"
+	cd /home/tom/Desktop/Hotel/Hotelucho/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/test_hotel.dir/test_hotel.cpp.o -MF CMakeFiles/test_hotel.dir/test_hotel.cpp.o.d -o CMakeFiles/test_hotel.dir/test_hotel.cpp.o -c /home/tom/Desktop/Hotel/Hotelucho/tests/test_hotel.cpp
 
 tests/CMakeFiles/test_hotel.dir/test_hotel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_hotel.dir/test_hotel.cpp.i"
-	cd /home/tom/Desktop/Hotelucho/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tom/Desktop/Hotelucho/tests/test_hotel.cpp > CMakeFiles/test_hotel.dir/test_hotel.cpp.i
+	cd /home/tom/Desktop/Hotel/Hotelucho/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tom/Desktop/Hotel/Hotelucho/tests/test_hotel.cpp > CMakeFiles/test_hotel.dir/test_hotel.cpp.i
 
 tests/CMakeFiles/test_hotel.dir/test_hotel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_hotel.dir/test_hotel.cpp.s"
-	cd /home/tom/Desktop/Hotelucho/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tom/Desktop/Hotelucho/tests/test_hotel.cpp -o CMakeFiles/test_hotel.dir/test_hotel.cpp.s
+	cd /home/tom/Desktop/Hotel/Hotelucho/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tom/Desktop/Hotel/Hotelucho/tests/test_hotel.cpp -o CMakeFiles/test_hotel.dir/test_hotel.cpp.s
 
 tests/CMakeFiles/test_hotel.dir/__/hotel.cpp.o: tests/CMakeFiles/test_hotel.dir/flags.make
 tests/CMakeFiles/test_hotel.dir/__/hotel.cpp.o: ../hotel.cpp
 tests/CMakeFiles/test_hotel.dir/__/hotel.cpp.o: tests/CMakeFiles/test_hotel.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tom/Desktop/Hotelucho/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tests/CMakeFiles/test_hotel.dir/__/hotel.cpp.o"
-	cd /home/tom/Desktop/Hotelucho/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/test_hotel.dir/__/hotel.cpp.o -MF CMakeFiles/test_hotel.dir/__/hotel.cpp.o.d -o CMakeFiles/test_hotel.dir/__/hotel.cpp.o -c /home/tom/Desktop/Hotelucho/hotel.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tom/Desktop/Hotel/Hotelucho/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tests/CMakeFiles/test_hotel.dir/__/hotel.cpp.o"
+	cd /home/tom/Desktop/Hotel/Hotelucho/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/test_hotel.dir/__/hotel.cpp.o -MF CMakeFiles/test_hotel.dir/__/hotel.cpp.o.d -o CMakeFiles/test_hotel.dir/__/hotel.cpp.o -c /home/tom/Desktop/Hotel/Hotelucho/hotel.cpp
 
 tests/CMakeFiles/test_hotel.dir/__/hotel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_hotel.dir/__/hotel.cpp.i"
-	cd /home/tom/Desktop/Hotelucho/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tom/Desktop/Hotelucho/hotel.cpp > CMakeFiles/test_hotel.dir/__/hotel.cpp.i
+	cd /home/tom/Desktop/Hotel/Hotelucho/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tom/Desktop/Hotel/Hotelucho/hotel.cpp > CMakeFiles/test_hotel.dir/__/hotel.cpp.i
 
 tests/CMakeFiles/test_hotel.dir/__/hotel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_hotel.dir/__/hotel.cpp.s"
-	cd /home/tom/Desktop/Hotelucho/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tom/Desktop/Hotelucho/hotel.cpp -o CMakeFiles/test_hotel.dir/__/hotel.cpp.s
+	cd /home/tom/Desktop/Hotel/Hotelucho/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tom/Desktop/Hotel/Hotelucho/hotel.cpp -o CMakeFiles/test_hotel.dir/__/hotel.cpp.s
 
 tests/CMakeFiles/test_hotel.dir/__/habitacion.cpp.o: tests/CMakeFiles/test_hotel.dir/flags.make
 tests/CMakeFiles/test_hotel.dir/__/habitacion.cpp.o: ../habitacion.cpp
 tests/CMakeFiles/test_hotel.dir/__/habitacion.cpp.o: tests/CMakeFiles/test_hotel.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tom/Desktop/Hotelucho/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object tests/CMakeFiles/test_hotel.dir/__/habitacion.cpp.o"
-	cd /home/tom/Desktop/Hotelucho/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/test_hotel.dir/__/habitacion.cpp.o -MF CMakeFiles/test_hotel.dir/__/habitacion.cpp.o.d -o CMakeFiles/test_hotel.dir/__/habitacion.cpp.o -c /home/tom/Desktop/Hotelucho/habitacion.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tom/Desktop/Hotel/Hotelucho/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object tests/CMakeFiles/test_hotel.dir/__/habitacion.cpp.o"
+	cd /home/tom/Desktop/Hotel/Hotelucho/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/test_hotel.dir/__/habitacion.cpp.o -MF CMakeFiles/test_hotel.dir/__/habitacion.cpp.o.d -o CMakeFiles/test_hotel.dir/__/habitacion.cpp.o -c /home/tom/Desktop/Hotel/Hotelucho/habitacion.cpp
 
 tests/CMakeFiles/test_hotel.dir/__/habitacion.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_hotel.dir/__/habitacion.cpp.i"
-	cd /home/tom/Desktop/Hotelucho/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tom/Desktop/Hotelucho/habitacion.cpp > CMakeFiles/test_hotel.dir/__/habitacion.cpp.i
+	cd /home/tom/Desktop/Hotel/Hotelucho/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tom/Desktop/Hotel/Hotelucho/habitacion.cpp > CMakeFiles/test_hotel.dir/__/habitacion.cpp.i
 
 tests/CMakeFiles/test_hotel.dir/__/habitacion.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_hotel.dir/__/habitacion.cpp.s"
-	cd /home/tom/Desktop/Hotelucho/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tom/Desktop/Hotelucho/habitacion.cpp -o CMakeFiles/test_hotel.dir/__/habitacion.cpp.s
+	cd /home/tom/Desktop/Hotel/Hotelucho/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tom/Desktop/Hotel/Hotelucho/habitacion.cpp -o CMakeFiles/test_hotel.dir/__/habitacion.cpp.s
 
 tests/CMakeFiles/test_hotel.dir/__/cliente.cpp.o: tests/CMakeFiles/test_hotel.dir/flags.make
 tests/CMakeFiles/test_hotel.dir/__/cliente.cpp.o: ../cliente.cpp
 tests/CMakeFiles/test_hotel.dir/__/cliente.cpp.o: tests/CMakeFiles/test_hotel.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tom/Desktop/Hotelucho/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object tests/CMakeFiles/test_hotel.dir/__/cliente.cpp.o"
-	cd /home/tom/Desktop/Hotelucho/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/test_hotel.dir/__/cliente.cpp.o -MF CMakeFiles/test_hotel.dir/__/cliente.cpp.o.d -o CMakeFiles/test_hotel.dir/__/cliente.cpp.o -c /home/tom/Desktop/Hotelucho/cliente.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tom/Desktop/Hotel/Hotelucho/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object tests/CMakeFiles/test_hotel.dir/__/cliente.cpp.o"
+	cd /home/tom/Desktop/Hotel/Hotelucho/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/test_hotel.dir/__/cliente.cpp.o -MF CMakeFiles/test_hotel.dir/__/cliente.cpp.o.d -o CMakeFiles/test_hotel.dir/__/cliente.cpp.o -c /home/tom/Desktop/Hotel/Hotelucho/cliente.cpp
 
 tests/CMakeFiles/test_hotel.dir/__/cliente.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_hotel.dir/__/cliente.cpp.i"
-	cd /home/tom/Desktop/Hotelucho/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tom/Desktop/Hotelucho/cliente.cpp > CMakeFiles/test_hotel.dir/__/cliente.cpp.i
+	cd /home/tom/Desktop/Hotel/Hotelucho/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tom/Desktop/Hotel/Hotelucho/cliente.cpp > CMakeFiles/test_hotel.dir/__/cliente.cpp.i
 
 tests/CMakeFiles/test_hotel.dir/__/cliente.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_hotel.dir/__/cliente.cpp.s"
-	cd /home/tom/Desktop/Hotelucho/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tom/Desktop/Hotelucho/cliente.cpp -o CMakeFiles/test_hotel.dir/__/cliente.cpp.s
+	cd /home/tom/Desktop/Hotel/Hotelucho/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tom/Desktop/Hotel/Hotelucho/cliente.cpp -o CMakeFiles/test_hotel.dir/__/cliente.cpp.s
 
 # Object files for target test_hotel
 test_hotel_OBJECTS = \
@@ -144,18 +144,18 @@ tests/test_hotel: lib/libgtest.a
 tests/test_hotel: lib/libgtest_main.a
 tests/test_hotel: lib/libgtest.a
 tests/test_hotel: tests/CMakeFiles/test_hotel.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tom/Desktop/Hotelucho/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable test_hotel"
-	cd /home/tom/Desktop/Hotelucho/build/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_hotel.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tom/Desktop/Hotel/Hotelucho/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable test_hotel"
+	cd /home/tom/Desktop/Hotel/Hotelucho/build/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_hotel.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 tests/CMakeFiles/test_hotel.dir/build: tests/test_hotel
 .PHONY : tests/CMakeFiles/test_hotel.dir/build
 
 tests/CMakeFiles/test_hotel.dir/clean:
-	cd /home/tom/Desktop/Hotelucho/build/tests && $(CMAKE_COMMAND) -P CMakeFiles/test_hotel.dir/cmake_clean.cmake
+	cd /home/tom/Desktop/Hotel/Hotelucho/build/tests && $(CMAKE_COMMAND) -P CMakeFiles/test_hotel.dir/cmake_clean.cmake
 .PHONY : tests/CMakeFiles/test_hotel.dir/clean
 
 tests/CMakeFiles/test_hotel.dir/depend:
-	cd /home/tom/Desktop/Hotelucho/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tom/Desktop/Hotelucho /home/tom/Desktop/Hotelucho/tests /home/tom/Desktop/Hotelucho/build /home/tom/Desktop/Hotelucho/build/tests /home/tom/Desktop/Hotelucho/build/tests/CMakeFiles/test_hotel.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/tom/Desktop/Hotel/Hotelucho/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tom/Desktop/Hotel/Hotelucho /home/tom/Desktop/Hotel/Hotelucho/tests /home/tom/Desktop/Hotel/Hotelucho/build /home/tom/Desktop/Hotel/Hotelucho/build/tests /home/tom/Desktop/Hotel/Hotelucho/build/tests/CMakeFiles/test_hotel.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : tests/CMakeFiles/test_hotel.dir/depend
 

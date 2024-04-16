@@ -120,6 +120,25 @@ std::vector<int> Hotel::habitaciones_por_piso(int piso){
     return habitaciones_piso;
 }
 
+std::vector<std::string> Hotel::habitaciones_disponibles(){
+    std::vector<std::string> vector;
+    std::string str;
+    std::string str_int1;
+    std::string str_int2;
+    std::string str_int3;
+    for (Habitacion & hab : habitaciones){
+        if(hab.esta_disponible()){
+            str_int1 = std::to_string(hab.get_piso());
+            str_int2 = std::to_string(hab.get_numero());
+            str_int3 = std::to_string(hab.get_capacidad());
+            str = str_int1 + "-" + str_int2 + " Capacidad: " + str_int3 + " personas";
+            vector.emplace_back(str);
+        }
+    }
+    return vector;
+}
+
+
 Habitacion* Hotel::get_habitacion(int numero, int piso){
     Habitacion * habit(nullptr);
     for (Habitacion & hab : habitaciones){
@@ -152,4 +171,8 @@ int Hotel::get_ocupacion(){
 }
 int Hotel::get_ocupacion_porcentual(){
     return porcentajeOcupacion;
+}
+
+std::string Hotel::get_nombre(){
+    return nombre;
 }

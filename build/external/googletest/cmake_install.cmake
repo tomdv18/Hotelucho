@@ -1,4 +1,4 @@
-# Install script for directory: /home/tom/Desktop/Hotelucho/external/googletest
+# Install script for directory: /home/tom/Desktop/Hotel/Hotelucho/external/googletest
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/tom/Desktop/Hotelucho/build/external/googletest/googlemock/cmake_install.cmake")
+  include("/home/tom/Desktop/Hotel/Hotelucho/build/external/googletest/googlemock/cmake_install.cmake")
 
 endif()
 

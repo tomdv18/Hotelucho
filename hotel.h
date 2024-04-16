@@ -41,6 +41,8 @@ public:
 
     bool habitacion_disponible(int numero, int piso);
 
+    std::vector<int> habitaciones_por_piso(int piso);
+
     int cantidad_clientes_registrados();
 
     int cantidad_habitaciones();

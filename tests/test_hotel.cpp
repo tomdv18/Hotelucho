@@ -134,6 +134,14 @@ TEST_F(HotelTest, EliminarHabitacion){
     EXPECT_EQ(0, hotel->cantidad_habitaciones());
 }
 
+TEST_F(HotelTest, HabitacionesPorPiso){
+    hotel->agregar_habitacion(11, 1, 2);
+    hotel->agregar_habitacion(15, 1, 2);
+    hotel->agregar_habitacion(11, 3, 2);
+    EXPECT_EQ(2, hotel->habitaciones_por_piso(1).size());
+    EXPECT_EQ(1, hotel->habitaciones_por_piso(3).size());
+    EXPECT_EQ(0, hotel->habitaciones_por_piso(7).size());
+}
 
 int main(int argc, char*argv[]){
     testing::InitGoogleTest(&argc, argv);

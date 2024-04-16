@@ -92,7 +92,6 @@ int Hotel::comenzar_mantenimiento(int numero, int piso){
     Habitacion* hab = get_habitacion( numero, piso);
     hab->comenzar_mantenimiento();
     return 0;
-
 }
 
 int Hotel::terminar_mantenimiento(int numero, int piso){
@@ -113,7 +112,13 @@ bool Hotel::habitacion_disponible(int numero, int piso){
     return habitacion->esta_disponible();
 }
 
-
+std::vector<int> Hotel::habitaciones_por_piso(int piso){
+    std::vector<int> habitaciones_piso;
+    for (Habitacion & hab : habitaciones){
+        if(hab.get_piso() == piso) habitaciones_piso.push_back(hab.get_numero());
+    }
+    return habitaciones_piso;
+}
 
 Habitacion* Hotel::get_habitacion(int numero, int piso){
     Habitacion * habit(nullptr);

@@ -23,6 +23,10 @@ void Habitacion::comenzar_mantenimiento(){
     estado = mantenimiento;
 }
 
+bool Habitacion::en_mantenimiento(){
+    return estado == mantenimiento;
+}
+
 void Habitacion::terminar_mantenimiento(){
     estado = disponible;
 }

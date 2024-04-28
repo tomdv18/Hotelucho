@@ -3,18 +3,32 @@
 
 #include <string>
 #include "hotel.h"
-
+#include "validador.h"
 
 class Launcher{
-    private:
+ private:
+    Validador validador;
     std::string nombre;
     Hotel hotel;
     void pantalla_reserva();
     void display();
     void header();
     void footer();
-    public:
-    Launcher(std::string nombre);
+    void pantalla_habitaciones_disponibles();
+    void pantalla_habitaciones();
+    void pantalla_clientes_registrados();
+    std::string recortarCampo(const std::string& campo, int ancho);
+    void eliminar_cliente();
+    void pantalla_agregar();
+    void modificar_cliente();
+    std::string modificacion_direccion();
+    std::string modificacion_telefono();
+    void agregar_habitacion();
+    void eliminar_habitacion();
+
+
+ public:
+    explicit Launcher(std::string nombre);
     int run();
 };
 

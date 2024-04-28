@@ -42,6 +42,18 @@ public:
     std::vector<int> habitaciones_por_piso(int piso);
 
     std::vector<std::string> habitaciones_disponibles();
+    
+    std::vector<std::string> habitaciones_status();
+
+    std::vector<std::string> informacion_clientes_registrados();
+
+    std::vector<int> dni_clientes_registrados();
+
+    bool eliminar_cliente(int dni);
+
+    void modificar_cliente(int dni, std::string telefono, std::string direccion);
+
+    void registrar_cliente(int dni, std::string nombre, int telefono, std::string direccion);
 
     int cantidad_clientes_registrados();
 

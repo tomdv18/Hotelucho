@@ -22,6 +22,8 @@ public:
 
     bool esta_disponible();
 
+    bool en_mantenimiento();
+
     void comenzar_mantenimiento();
 
     void terminar_mantenimiento();

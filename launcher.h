@@ -25,7 +25,8 @@ class Launcher{
     std::string modificacion_telefono();
     void agregar_habitacion();
     void eliminar_habitacion();
-
+    void detalles_habitacion();
+    void pantalla_habitacion(int numero, int piso);
 
  public:
     explicit Launcher(std::string nombre);

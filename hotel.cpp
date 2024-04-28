@@ -3,7 +3,7 @@
 #include "cliente.h"
 #include <iostream>
 #include <string>
-
+#include <algorithm>
 #define ERROR -1
 
 
@@ -155,9 +155,46 @@ std::vector<std::string> Hotel::habitaciones_status() {
         }
         vector.emplace_back(str);
     }
+    std::sort(vector.begin(), vector.end(), [](const std::string& a, const std::string& b) {
+        int piso_a = std::stoi(a.substr(0, a.find(',')));
+        int piso_b = std::stoi(b.substr(0, b.find(',')));
+        int numero_a = std::stoi(a.substr(a.find(',') + 1, a.rfind(',') - a.find(',') - 1));
+        int numero_b = std::stoi(b.substr(b.find(',') + 1, b.rfind(',') - b.find(',') - 1));
+        
+        if (piso_a != piso_b) {
+            return piso_a < piso_b;
+        } else {
+            return numero_a < numero_b;
+        }
+    });
+
     return vector;
 }
 
+info_habitacion Hotel::informacion_habitacion(int numero, int piso) {
+    info_habitacion info;
+    for (Habitacion & hab : habitaciones) {
+        if (hab.get_numero() == numero && hab.get_piso() == piso) {
+            info.numero = hab.get_numero();
+            info.piso = hab.get_piso();
+            info.capacidad = hab.get_capacidad();
+            if (hab.esta_disponible()) {
+                info.estado = "Disponible";
+            } else if (hab.en_mantenimiento()) {
+                info.estado = "Mantenimiento";
+            } else {
+                info.estado = "Ocupada";
+            }
+            info.dni_cliente = hab.get_dni_cliente();
+            if (info.dni_cliente != -1) {
+                hab.get_nombre_cliente(info.nombre_cliente);
+            } else {
+                info.nombre_cliente = "N/A";
+            }
+        }
+    }
+    return info;
+}
 
 std::vector<int> Hotel::dni_clientes_registrados() {
     std::vector<int> vector;

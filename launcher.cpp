@@ -39,19 +39,19 @@ Launcher::Launcher(std::string nombreHotel) :
 }
 
 void Launcher::header() {
-    std::cout << BOLD << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" <<std::endl;
-    std::cout << BOLD <<"Hotel: " << nombre << std::endl;
-    std::cout << BOLD << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" <<std::endl;
+    std::cout << BOLD << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" <<std::endl;
+    std::cout << BOLD <<"  Hotel: " << nombre << std::endl;
+    std::cout << BOLD << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" <<std::endl;
     std::cout <<std::endl;
     std::cout <<std::endl;
 }
 
 void Launcher::footer() {
-    std::cout << BOLD << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" <<std::endl;
+    std::cout << BOLD << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" <<std::endl;
     std::cout << "Capacidad actual: " << hotel.get_capacidad() << std::endl;
     std::cout << "Ocupacion actual: " << hotel.get_ocupacion_porcentual()
         << "% (" <<hotel.get_ocupacion() << " personas)" <<std::endl;
-    std::cout << BOLD << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << RESET <<std::endl;
+    std::cout << BOLD << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << RESET <<std::endl;
 }
 
 void Launcher::display() {
@@ -172,8 +172,73 @@ void Launcher::eliminar_habitacion(){
     pantalla_habitaciones();
 }
 
+void Launcher::pantalla_habitacion(int numero, int piso){
+    info_habitacion info = hotel.informacion_habitacion(numero, piso);
+    header();
+    std::cout << "Detalles de la habitacion\n" <<std::endl;
+    std::cout <<std::endl;
+    std::cout << std::left << "\tPiso:\t\t" << info.piso << std::endl;
+    std::cout << std::left << "\tNumero:\t\t" << info.numero << std::endl;
+    std::cout << std::left << "\tCapacidad:\t" << info.capacidad << " personas" << std::endl;
+    std::cout << std::left << "\tEstado:\t\t";
+    if (info.estado =="Disponible") {
+        std::cout << std::left  << GREEN << info.estado << RESET<< std::endl;
+    }
+    if (info.estado =="Mantenimiento") {
+        std::cout << std::left  << YELLOW  << info.estado << RESET<< std::endl;
+    }
+    if (info.estado =="Ocupada") {
+        std::cout << std::left  << RED << info.estado << RESET<< std::endl;
+    }
+    if (info.dni_cliente != -1) {
+        std::cout << std::left << "\tOcupante actual: " << info.nombre_cliente << " (DNI: " << info.dni_cliente << ")" << std::endl;
+    }
+    std::cout <<std::endl;
+    std::cout <<std::endl;
+    char input;
+
+    std::cout <<"Volver - q" << std::endl;
+    footer();
+    std::cin >> input;
+    std::cin.ignore();
+    if (input == 'q') {
+        pantalla_habitaciones();
+        return;
+    } else {
+        std::cout << "Comando invalido" << std::endl;
+    }
+
+}
 
 
+void Launcher::detalles_habitacion(){
+ std::cout << "Ingrese el piso de la habitacion: " << std::endl;
+    std::string piso;
+
+    std::getline(std::cin, piso);
+    while (!validador.dato_habitacion_valido(piso)) {
+            std::cout << "Piso invalido" << std::endl;
+            std::getline(std::cin, piso);
+    }
+    std::cout << "Ingrese el numero de la habitacion: " << std::endl;
+    std::string numero;
+    std::getline(std::cin, numero);
+    while (!validador.dato_habitacion_valido(numero)) {
+            std::cout << "Numero invalido" << std::endl;
+            std::getline(std::cin, numero);
+    }
+
+    if (!hotel.existe_habitacion(stoi(numero), stoi(piso))) {
+        std::cout << "ERROR: No existe una habitacion registrada en ese piso y numero" << std::endl;
+        std::this_thread::sleep_for(std::chrono::seconds(2));
+        system("clear");
+        pantalla_habitaciones();
+    } else {
+        system("clear");
+        pantalla_habitacion(stoi(numero), stoi(piso));
+    }
+
+}
 
 
 void Launcher::pantalla_habitaciones() {
@@ -211,7 +276,7 @@ void Launcher::pantalla_habitaciones() {
     std::cout <<std::endl;
     std::cout <<std::endl;
     char input;
-    std::cout <<"Agregar - 1\tEliminar - 2\tReservar - 3\tMas Informacion - 4\tVolver - q" << std::endl;
+    std::cout <<"Agregar - 1\tEliminar - 2\tMantenimientos - 3\tInformacion - 4\nReservar - 5\tVolver - q" << std::endl;
     footer();
     std::cin >> input;
     std::cin.ignore();
@@ -220,6 +285,15 @@ void Launcher::pantalla_habitaciones() {
         return;
     } else if (input == '2') {
         eliminar_habitacion();
+        return;
+    } else if (input == '3') {
+        // mantenimientos
+        return;
+     } else if (input == '4') {
+        detalles_habitacion();
+        return;
+    } else if (input == '5') {
+        // Reservar
         return;
     } else if (input == 'q') {
         return;

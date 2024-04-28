@@ -6,6 +6,15 @@
 #include "cliente.h"
 #include "habitacion.h"
 
+struct info_habitacion{
+    int numero;
+    int piso;
+    int capacidad;
+    std::string estado;
+    int dni_cliente;
+    std::string nombre_cliente;
+};
+
 class Hotel {
 private:
     std::string nombre;
@@ -38,6 +47,8 @@ public:
     bool existe_cliente(const int dni);
 
     bool habitacion_disponible(int numero, int piso);
+
+    info_habitacion informacion_habitacion(int numero, int piso);
 
     std::vector<int> habitaciones_por_piso(int piso);
 

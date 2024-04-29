@@ -149,6 +149,18 @@ std::vector<std::string> Hotel::habitaciones_disponibles() {
             vector.emplace_back(str);
         }
     }
+    std::sort(vector.begin(), vector.end(), [](const std::string& a, const std::string& b) {
+        int piso_a = std::stoi(a.substr(0, a.find(',')));
+        int piso_b = std::stoi(b.substr(0, b.find(',')));
+        int numero_a = std::stoi(a.substr(a.find(',') + 1, a.rfind(',') - a.find(',') - 1));
+        int numero_b = std::stoi(b.substr(b.find(',') + 1, b.rfind(',') - b.find(',') - 1));
+        
+        if (piso_a != piso_b) {
+            return piso_a < piso_b;
+        } else {
+            return numero_a < numero_b;
+        }
+    });
     return vector;
 }
 
@@ -263,6 +275,19 @@ std::vector<std::string> Hotel::informacion_clientes_registrados() {
         str = dni + ","+ nombre + "," +telefono + "," + direccion;
         vector.emplace_back(str);
     }
+
+    std::sort(vector.begin(), vector.end(), [](const std::string& a, const std::string& b) {
+        int dni_a = std::stoi(a.substr(0, a.find(',')));
+        int dni_b = std::stoi(b.substr(0, b.find(',')));
+        
+        if (dni_a != dni_b) {
+            return dni_a < dni_b;
+        }
+        else {
+        return false;
+        }
+    });
+
     return vector;
 }
 void Hotel::registrar_cliente(int dni, std::string nombre, int telefono, std::string direccion) {

@@ -2,12 +2,18 @@
 #include <iostream>
 
 int main(int argc, char* argv[]) {
-    if (argc != 2) {
-        std::cout << "ERROR: Debe insertar el nombre del hotel al crearlo" << std::endl;
+    if (argc >= 2) {
+        system("clear");
+        Launcher launcher(argv[1]);
+        if (argc == 3){
+            launcher.leer(argv[2]);
+        }
+        system("clear");
+        launcher.run();
+        return 0;
+    }
+    else {
+        std::cerr << "Error: Debe haber al menos dos argumentos" << std::endl;
         return 1;
     }
-    system("clear");
-    Launcher launcher(argv[1]);
-    launcher.run();
-    return 0;
 }

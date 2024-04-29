@@ -8,6 +8,7 @@
 #include "launcher.h"
 #include "hotel.h"
 #include "habitacion.h"
+#include "lector_archivo.h"
 #include "cliente.h"
 #include <iomanip>
 
@@ -36,14 +37,14 @@
 
 Launcher::Launcher(std::string nombreHotel) :
     nombre(nombreHotel), hotel(nombre) {
-    std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" <<std::endl;
+    std::cout <<BOLD << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" <<std::endl;
     std::cout << std::endl;
     std::cout << "~~~~~~~~~~~~ Bienvenido al sistema de gestion de hoteles Hotelucho ~~~~~~~~~~~~~" << std::endl;
     std::cout << std::endl;
     std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" <<std::endl;
 
     std::cout << std::endl;
-    std::cout << "+ Inicializando Hotel:\t" << nombreHotel <<std::endl;
+    std::cout << "+ Inicializando Hotel:\t" << nombreHotel << RESET << std::endl;
     std::this_thread::sleep_for(std::chrono::seconds(3));
     system("clear");
 }
@@ -563,6 +564,7 @@ void Launcher::eliminar_cliente() {
         if (stoi(dni) == id) {
             if (!hotel.eliminar_cliente(stoi(dni))) {
                 std::cout << "ERROR: El cliente actualmente esta registrado en una habitacion" << std::endl;
+                std::this_thread::sleep_for(std::chrono::seconds(2));
                 return;
             }
             system("clear");
@@ -573,15 +575,12 @@ void Launcher::eliminar_cliente() {
     std::cout << "No existe cliente registrado con ese dni" << std::endl;
 }
 
-
+void Launcher::leer(const std::string& nombreArchivo) {
+    Lector_Archivo lector(nombreArchivo, hotel);
+    lector.inicializar_desde_archivo(nombreArchivo);
+}
 
 int Launcher::run() {   
-    hotel.agregar_habitacion(1, 1, 4);
-    hotel.agregar_habitacion(52, 1, 5);
-    hotel.agregar_habitacion(2, 2, 5);
-    hotel.crear_reserva(01, 01, 12886666, "Juan carlos", 69566411, "Por alla");
-    hotel.registrar_cliente(12999742, "El negro tecla", 444668, "Lanus 1003");
-    hotel.comenzar_mantenimiento(52, 1);
     system("clear");
     display();
 

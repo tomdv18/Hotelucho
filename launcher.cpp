@@ -26,9 +26,9 @@
 
 
 #define ANCHO_DNI 12
-#define ANCHO_NOMBRE 25
+#define ANCHO_NOMBRE 20
 #define ANCHO_TELEFONO 15
-#define ANCHO_DIRECCION 40
+#define ANCHO_DIRECCION 25
 #define ANCHO_PISO 12
 #define ANCHO_NUMERO 12
 #define ANCHO_CAPACIDAD 15
@@ -36,6 +36,16 @@
 
 Launcher::Launcher(std::string nombreHotel) :
     nombre(nombreHotel), hotel(nombre) {
+    std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" <<std::endl;
+    std::cout << std::endl;
+    std::cout << "~~~~~~~~~~~~ Bienvenido al sistema de gestion de hoteles Hotelucho ~~~~~~~~~~~~~" << std::endl;
+    std::cout << std::endl;
+    std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" <<std::endl;
+
+    std::cout << std::endl;
+    std::cout << "+ Inicializando Hotel:\t" << nombreHotel <<std::endl;
+    std::this_thread::sleep_for(std::chrono::seconds(3));
+    system("clear");
 }
 
 void Launcher::header() {
@@ -56,15 +66,39 @@ void Launcher::footer() {
 
 void Launcher::display() {
     header();
-    std::cout << BOLD <<"Presiona 1 " <<RESET<< "para ver las habitaciones disponibles \n" <<std::endl; //READY
-    std::cout << BOLD <<"Presiona 2 " <<RESET<< "para realizar una reserva\n" <<std::endl;
-    std::cout << BOLD <<"Presiona 3 " <<RESET<< "para ver las habitaciones registradas\n" <<std::endl;
-    std::cout << BOLD <<"Presiona 4 " <<RESET<< "para ver los clientes registrados" <<std::endl;        //READY
+    std::cout << BOLD << BLUE <<"Presiona 1 " <<RESET<< "para ver las habitaciones disponibles \n" <<std::endl; //READY
+    std::cout << BOLD << BLUE <<"Presiona 2 " <<RESET<< "para ver todas las habitaciones registradas\n" <<std::endl; 
+    std::cout << BOLD << BLUE <<"Presiona 3 " <<RESET<< "para ver los clientes registrados\n" <<std::endl;        //READY
+    std::cout << BOLD << BLUE <<"Presiona q " <<RESET<< "para salir" <<std::endl;        //READY
     footer();
-    std::this_thread::sleep_for(std::chrono::seconds(2));
+    char input;
+    std::cin >> input;
+    std::cin.ignore();
+   
+    if (input == '1') {
+        pantalla_habitaciones_disponibles();
+        system("clear");
+        display();
+    } else if (input == '2') {
+        pantalla_habitaciones();
+        system("clear");
+        display();
+    } else if (input == '3') {
+        pantalla_clientes_registrados();
+        system("clear");
+        display();
+    } else if (tolower(input) == 'q'){
+        std::cout << "Saliendo..." << std::endl;
+        return;
+    } 
+    else {
+        std::cout << "Comando invalido" << std::endl;
+    }
+
 }
 
 void Launcher::pantalla_habitaciones_disponibles() {
+    system("clear");
     header();
     std::cout << "Habitaciones disponibles para reservas \n"<< RESET <<std::endl;
     std::cout <<std::endl;
@@ -89,14 +123,14 @@ void Launcher::pantalla_habitaciones_disponibles() {
     std::cout <<std::endl;
     std::cout <<std::endl;
     char input;
-    std::cout <<"Reservar - 1\tVolver - q" << std::endl;
+    std::cout << BOLD << BLUE <<"Reservar - 1\tVolver - q" << RESET << std::endl;
     footer();
     std::cin >> input;
     std::cin.ignore();
     if (input == '1') {
-        //pantalla_reserva();
+        pantalla_reserva();
         return;
-    } else if (input == 'q') {
+    } else if (tolower(input) == 'q') {
         return;
     } else {
         std::cout << "Comando invalido" << std::endl;
@@ -106,22 +140,9 @@ void Launcher::pantalla_habitaciones_disponibles() {
 
 void Launcher::agregar_habitacion(){
 
- std::cout << "Ingrese el piso de la habitacion: " << std::endl;
-    std::string piso;
-
-    std::getline(std::cin, piso);
-    while (!validador.dato_habitacion_valido(piso)) {
-            std::cout << "Piso invalido" << std::endl;
-            std::getline(std::cin, piso);
-    }
-    std::cout << "Ingrese el numero de la habitacion: " << std::endl;
-    std::string numero;
-    std::getline(std::cin, numero);
-    while (!validador.dato_habitacion_valido(numero)) {
-            std::cout << "Numero invalido" << std::endl;
-            std::getline(std::cin, numero);
-    }
-
+    int numero;
+    int piso;
+    solicitar_datos_habitacion(piso, numero);
     std::cout << "Ingrese la capacidad de la habitacion: " << std::endl;
     std::string capacidad;
     std::getline(std::cin, capacidad);
@@ -129,8 +150,8 @@ void Launcher::agregar_habitacion(){
             std::cout << "Capacidad invalida" << std::endl;
             std::getline(std::cin, capacidad);
     }
-    if (!hotel.existe_habitacion(stoi(numero), stoi(piso))) {
-        hotel.agregar_habitacion(stoi(numero), stoi(piso), stoi(capacidad));
+    if (!hotel.existe_habitacion(numero, piso)) {
+        hotel.agregar_habitacion(numero, piso, stoi(capacidad));
     } else {
         std::cout << "ERROR: Ya existe una habitacion registrada en ese piso y numero" << std::endl;
         std::this_thread::sleep_for(std::chrono::seconds(2));
@@ -140,31 +161,18 @@ void Launcher::agregar_habitacion(){
 }
 
 void Launcher::eliminar_habitacion(){
- std::cout << "Ingrese el piso de la habitacion: " << std::endl;
-    std::string piso;
-
-    std::getline(std::cin, piso);
-    while (!validador.dato_habitacion_valido(piso)) {
-            std::cout << "Piso invalido" << std::endl;
-            std::getline(std::cin, piso);
-    }
-    std::cout << "Ingrese el numero de la habitacion: " << std::endl;
-    std::string numero;
-    std::getline(std::cin, numero);
-    while (!validador.dato_habitacion_valido(numero)) {
-            std::cout << "Numero invalido" << std::endl;
-            std::getline(std::cin, numero);
-    }
-
-    if (!hotel.existe_habitacion(stoi(numero), stoi(piso))) {
-        std::cout << "ERROR: No existe una habitacion registrada en ese piso y numero" << std::endl;
+    int numero;
+    int piso;
+    solicitar_datos_habitacion(piso, numero);
+    if (!hotel.existe_habitacion(numero, piso)) {
+        std::cout << BOLD << "ERROR: No existe una habitacion registrada en ese piso y numero" << RESET << std::endl;
         std::this_thread::sleep_for(std::chrono::seconds(2));
-    } else if (!hotel.habitacion_disponible(stoi(numero), stoi(piso))) {
-        std::cout << "ERROR: La habitacion a eliminar esta ocupada" << std::endl;
+    } else if (!hotel.habitacion_disponible(numero, piso)) {
+        std::cout << BOLD << "ERROR: La habitacion a eliminar esta ocupada" << RESET << std::endl;
         std::this_thread::sleep_for(std::chrono::seconds(2));
     } else {
-        if (hotel.eliminar_habitacion(stoi(numero), stoi(piso)) != 0) {
-            std::cout << "ERROR: No se pudo eliminar la habitacion" << std::endl;
+        if (hotel.eliminar_habitacion(numero, piso) != 0) {
+            std::cout << BOLD << "ERROR: No se pudo eliminar la habitacion" << RESET << std::endl;
             std::this_thread::sleep_for(std::chrono::seconds(2));
         }
     }
@@ -197,11 +205,11 @@ void Launcher::pantalla_habitacion(int numero, int piso){
     std::cout <<std::endl;
     char input;
 
-    std::cout <<"Volver - q" << std::endl;
+    std::cout << BOLD << BLUE <<"Volver - q" << RESET << std::endl;
     footer();
     std::cin >> input;
     std::cin.ignore();
-    if (input == 'q') {
+    if (tolower(input) == 'q') {
         pantalla_habitaciones();
         return;
     } else {
@@ -209,39 +217,130 @@ void Launcher::pantalla_habitacion(int numero, int piso){
     }
 
 }
+void Launcher::mantenimientos() {
+    int numero;
+    int piso;
+    solicitar_datos_habitacion(piso, numero);
+    if (!hotel.existe_habitacion(numero, piso)) {
+        std::cout << "ERROR: No existe una habitacion registrada en ese piso y numero" << std::endl;
+        std::this_thread::sleep_for(std::chrono::seconds(2));
+        system("clear");
+        pantalla_habitaciones();
+    } else {
+        std::cout << BOLD;
+        if (hotel.habitacion_disponible(numero, piso)) {
+            std::cout  << "La habitacion " << numero << " del piso " << piso
+                      << " comenzara su mantenimiento" << std::endl;
+            hotel.comenzar_mantenimiento(numero, piso);
+        } else if (hotel.habitacion_en_mantenimiento(numero, piso)) {
+            std::cout << "La habitacion " << numero << " del piso " << piso
+                      << " finalizara su mantenimiento" << std::endl;
+            hotel.terminar_mantenimiento(numero, piso);
+        } else {
+            std::cout << "ERROR: La habitacion a modificar esta ocupada" << std::endl;
+        }
+        std::cout << RESET;
+        std::this_thread::sleep_for(std::chrono::seconds(2));
+        system("clear");
+        pantalla_habitaciones();
+    }
+}
 
+void Launcher::solicitar_datos_habitacion(int &piso, int & numero){
+     std::cout << "Ingrese el piso de la habitacion: " << std::endl;
+    std::string numero_piso;
 
-void Launcher::detalles_habitacion(){
- std::cout << "Ingrese el piso de la habitacion: " << std::endl;
-    std::string piso;
-
-    std::getline(std::cin, piso);
-    while (!validador.dato_habitacion_valido(piso)) {
+    std::getline(std::cin, numero_piso);
+    while (!validador.dato_habitacion_valido(numero_piso)) {
             std::cout << "Piso invalido" << std::endl;
-            std::getline(std::cin, piso);
+            std::getline(std::cin, numero_piso);
     }
     std::cout << "Ingrese el numero de la habitacion: " << std::endl;
-    std::string numero;
-    std::getline(std::cin, numero);
-    while (!validador.dato_habitacion_valido(numero)) {
+    std::string num;
+    std::getline(std::cin, num);
+    while (!validador.dato_habitacion_valido(num)) {
             std::cout << "Numero invalido" << std::endl;
-            std::getline(std::cin, numero);
+            std::getline(std::cin, num);
     }
+    piso = stoi(numero_piso);
+    numero = stoi(num);
+}
 
-    if (!hotel.existe_habitacion(stoi(numero), stoi(piso))) {
+void Launcher::detalles_habitacion() {
+    int numero;
+    int piso;
+    solicitar_datos_habitacion(piso, numero);
+    if (!hotel.existe_habitacion(numero, piso)) {
         std::cout << "ERROR: No existe una habitacion registrada en ese piso y numero" << std::endl;
         std::this_thread::sleep_for(std::chrono::seconds(2));
         system("clear");
         pantalla_habitaciones();
     } else {
         system("clear");
-        pantalla_habitacion(stoi(numero), stoi(piso));
+        pantalla_habitacion(numero, piso);
     }
-
 }
 
+void Launcher::pantalla_reserva() {
+    int numero;
+    int piso;
+    solicitar_datos_habitacion(piso, numero);
+
+    if (!hotel.existe_habitacion(numero, piso)) {
+        std::cout << "ERROR: No existe una habitacion registrada en ese piso y numero" << std::endl;
+        std::this_thread::sleep_for(std::chrono::seconds(2));
+        pantalla_habitaciones();
+    } else if (!hotel.habitacion_disponible(numero, piso)) {
+        std::cout << "ERROR: La habitacion seleccionada no esta disponible" << std::endl;
+        std::this_thread::sleep_for(std::chrono::seconds(2));
+        system("clear");
+        pantalla_habitaciones();
+    } else {
+        system("clear");
+        std::cout << "La habitacion esta disponible!" << std::endl;
+        std::cout << BOLD << "Habitacion seleccionada con numero " << numero << " del piso " << piso << std::endl;
+        std::cout << RESET << "Ingrese los datos del cliente" << std::endl;
+        std::string dni, nombre, telefono, direccion;
+        std::cout <<  "Ingrese DNI: "<< std::endl;
+        std::cin >> dni;
+        std::cin.ignore();
+        std::vector<int> dnis; // NO se usa, queda vestigial para reutilizar la funcion
+        while (!validador.dni_valido(dni, dnis)) {
+            std::cout << "DNI invalido" << std::endl;
+            std::cin >> dni;
+            std::cin.ignore();
+        }
+        std::cout <<  "Ingrese nombre: "<< std::endl;
+        std::getline(std::cin, nombre);
+        while (!validador.nombre_valido(nombre)) {
+            std::cout << "Nombre invalido" << std::endl;
+            std::getline(std::cin, nombre);
+        }
+        std::cout <<  "Ingrese Telefono: "<< std::endl;
+        std::cin >> telefono;
+        std::cin.ignore();
+        while (!validador.telefono_valido(telefono)) {
+            std::cout << "Telefono invalido" << std::endl;
+            std::cin >> telefono;
+            std::cin.ignore();
+        }
+        std::cout <<  "Ingrese Direccion: "<< std::endl;
+        std::getline(std::cin, direccion);
+        while (!validador.direccion_valida(direccion)) {
+            std::cout << "Direccion invalida" << std::endl;
+            std::getline(std::cin, direccion);
+        }
+
+        if( hotel.crear_reserva(numero, piso, stoi(dni), nombre, stoi(telefono), direccion) != 0) {
+            std::cout << "ERROR: No se pudo realizar la reserva" << std::endl;
+        } else { std::cout << "Reserva realizada con exito" << std::endl; 
+        }
+        std::this_thread::sleep_for(std::chrono::seconds(2));
+    }
+}
 
 void Launcher::pantalla_habitaciones() {
+    system("clear");
     header();
     std::cout << "Habitaciones\n"<< RESET <<std::endl;
     std::cout <<std::endl;
@@ -276,7 +375,7 @@ void Launcher::pantalla_habitaciones() {
     std::cout <<std::endl;
     std::cout <<std::endl;
     char input;
-    std::cout <<"Agregar - 1\tEliminar - 2\tMantenimientos - 3\tInformacion - 4\nReservar - 5\tVolver - q" << std::endl;
+    std::cout << BOLD << BLUE <<"Agregar - 1\tEliminar - 2\tMantenimientos - 3\tInformacion - 4\nReservas - 5\tVolver - q" << RESET << std::endl;
     footer();
     std::cin >> input;
     std::cin.ignore();
@@ -287,15 +386,15 @@ void Launcher::pantalla_habitaciones() {
         eliminar_habitacion();
         return;
     } else if (input == '3') {
-        // mantenimientos
+        mantenimientos();
         return;
      } else if (input == '4') {
         detalles_habitacion();
         return;
     } else if (input == '5') {
-        // Reservar
+        pantalla_reserva();
         return;
-    } else if (input == 'q') {
+    } else if (tolower(input) == 'q') {
         return;
     } else {
         std::cout << "Comando invalido" << std::endl;
@@ -356,8 +455,10 @@ void Launcher::pantalla_agregar() {
 }
 
 void Launcher::pantalla_clientes_registrados() {
+    system("clear");
     header();
     std::cout << "Clientes Registrados\n"<< RESET <<std::endl;
+    std::cout <<std::endl;
     if (hotel.cantidad_clientes_registrados() <= 0) {
         std::cout << "No hay clientes registrados" <<std::endl;
     } else {
@@ -367,7 +468,6 @@ void Launcher::pantalla_clientes_registrados() {
          << std::setw(ANCHO_DIRECCION) << "Direccion" << std::endl;
         std::string dni, nombre, telefono, direccion;
         std::vector<std::string> clientes = hotel.informacion_clientes_registrados();
-
         for (std::string cliente : clientes) {
             std::stringstream ss(cliente);
             getline(ss, dni, ',');
@@ -383,7 +483,7 @@ void Launcher::pantalla_clientes_registrados() {
     std::cout <<std::endl;
     std::cout <<std::endl;
     char input;
-    std::cout <<"Agregar - 1\tEliminar - 2\tModificar - 3\tVolver - q" << std::endl;
+    std::cout << BOLD << BLUE <<"Agregar - 1\tEliminar - 2\tModificar - 3\tVolver - q" << RESET << std::endl;
     footer();
     std::cin >> input;
     std::cin.ignore();
@@ -397,7 +497,7 @@ void Launcher::pantalla_clientes_registrados() {
     } else if (input == '3') {
         modificar_cliente();
         return;
-    } else if (input == 'q') {
+    } else if (tolower(input) == 'q') {
         return;
     } else {
         std::cout << "Comando invalido" << std::endl;
@@ -475,39 +575,15 @@ void Launcher::eliminar_cliente() {
 
 
 
-int Launcher::run() {
-    std::cout <<std::endl;
-    std::this_thread::sleep_for(std::chrono::seconds(2));
-    system("clear");
-    display();
+int Launcher::run() {   
     hotel.agregar_habitacion(1, 1, 4);
     hotel.agregar_habitacion(52, 1, 5);
     hotel.agregar_habitacion(2, 2, 5);
     hotel.crear_reserva(01, 01, 12886666, "Juan carlos", 69566411, "Por alla");
+    hotel.registrar_cliente(12999742, "El negro tecla", 444668, "Lanus 1003");
     hotel.comenzar_mantenimiento(52, 1);
     system("clear");
-    //pantalla_habitaciones_disponibles();
-    pantalla_habitaciones();
-    //pantalla_clientes_registrados(); //CHEQUEADA FUNCIONAL 100%
-    /*std::this_thread::sleep_for(std::chrono::seconds(5));
-    system("clear");
-    
-    std::this_thread::sleep_for(std::chrono::seconds(5));
-    system("clear");
-    pantalla_habitaciones_disponibles();*/
+    display();
 
-    /*
-    hotel.agregar_habitacion(1,1,4);
-    hotel.agregar_habitacion(52,1,5);
-
-    std::string s("Juan carlos");
-    std::string j("Por alla");
-    hotel.crear_reserva(01,01,42886658,s, 69566411, j);
-    system("clear");
-    display(hotel);
-    std::vector<std::string> habitaciones = hotel.habitaciones_disponibles();
-    for(std::string hab : habitaciones){
-            std::cout << hab <<std::endl;
-    } */
     return 0;
 }

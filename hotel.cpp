@@ -8,7 +8,6 @@
 
 
 Hotel::Hotel(std::string nombreHotel) : nombre(nombreHotel), ocupacion(0), capacidad(0), porcentajeOcupacion(0) {
-std::cout << "Hotel creado, bienvenido a " << nombre<< std::endl;
 }
 
 int Hotel::agregar_habitacion(const int numero, const int piso, const int capacidadHabitacion) {
@@ -16,6 +15,7 @@ int Hotel::agregar_habitacion(const int numero, const int piso, const int capaci
         Habitacion nuevaHab(numero, piso, capacidadHabitacion);
         habitaciones.emplace_back(nuevaHab);
         capacidad = capacidadHabitacion + capacidad;
+        actualizar_ocupacion();
         return 0;
     }
     return ERROR;
@@ -33,6 +33,7 @@ int Hotel::eliminar_habitacion(const int numero, const int piso) {
         if (hab->get_numero() == numero && hab->get_piso() == piso) {
             capacidad = capacidad - hab->get_capacidad();
             habitaciones.erase(hab);
+            actualizar_ocupacion();
             return 0;
         }
     }
@@ -52,6 +53,16 @@ bool Hotel::existe_habitacion(int numero, int piso) {
     return false;
 }
 
+void Hotel::actualizar_ocupacion() {
+    int ocupacion = 0;
+    for (Habitacion & hab : habitaciones) {
+        if (!hab.esta_disponible() && !hab.en_mantenimiento()) {
+            ocupacion = ocupacion + hab.get_capacidad();
+        }
+    }
+    this->ocupacion = ocupacion;
+    porcentajeOcupacion = ocupacion *100 / capacidad;
+}
 
 
 int Hotel::crear_reserva(int numero, int piso, int dni_cliente, std::string nombre,
@@ -64,9 +75,8 @@ int Hotel::crear_reserva(int numero, int piso, int dni_cliente, std::string nomb
         Habitacion * habitacion_reservada = get_habitacion(numero, piso);
         Cliente * cliente_reserva = get_cliente(dni_cliente);
         habitacion_reservada->reservar(cliente_reserva);
-        ocupacion = ocupacion + habitacion_reservada->get_capacidad();
-        porcentajeOcupacion = ocupacion *100 / capacidad;
-    return 0;
+        actualizar_ocupacion();
+        return 0;
     }
     return ERROR;
 }
@@ -77,8 +87,7 @@ int Hotel::finalizar_reserva(int numero, int piso) {
     }
     Habitacion* hab = get_habitacion(numero, piso);
     hab->terminar_reserva();
-    ocupacion = ocupacion - hab->get_capacidad();
-    porcentajeOcupacion = ocupacion *100 / capacidad;
+    actualizar_ocupacion();
     return 0;
 }
 
@@ -107,6 +116,14 @@ bool Hotel::habitacion_disponible(int numero, int piso) {
     }
     Habitacion * habitacion = get_habitacion(numero, piso);
     return habitacion->esta_disponible();
+}
+
+bool Hotel::habitacion_en_mantenimiento(int numero, int piso) {
+    if (!existe_habitacion(numero, piso)) {
+        throw std::runtime_error("Habitacion no existe");
+    }
+    Habitacion * habitacion = get_habitacion(numero, piso);
+    return habitacion->en_mantenimiento();
 }
 
 std::vector<int> Hotel::habitaciones_por_piso(int piso) {

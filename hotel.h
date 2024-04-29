@@ -26,6 +26,7 @@ private:
     
     Habitacion  * get_habitacion(int numero, int piso);
     Cliente *  get_cliente(int dni);
+    void actualizar_ocupacion();
 
 public:
     Hotel(std::string nombre);
@@ -47,6 +48,8 @@ public:
     bool existe_cliente(const int dni);
 
     bool habitacion_disponible(int numero, int piso);
+
+    bool habitacion_en_mantenimiento(int numero, int piso);
 
     info_habitacion informacion_habitacion(int numero, int piso);
 

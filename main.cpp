@@ -6,9 +6,7 @@ int main(int argc, char* argv[]) {
         std::cout << "ERROR: Debe insertar el nombre del hotel al crearlo" << std::endl;
         return 1;
     }
-    std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" <<std::endl;
-    std::cout << "Bienvenido al sistema de gestion de hoteles Hotelucho" << std::endl;
-    std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" <<std::endl;
+    system("clear");
     Launcher launcher(argv[1]);
     launcher.run();
     return 0;

@@ -487,9 +487,9 @@ void Launcher::pantalla_clientes_registrados() {
     if (hotel.cantidad_clientes_registrados() <= 0) {
         std::cout << "No hay clientes registrados" << std::endl;
     } else {
-        std::cout << std::left << std::setw(ANCHO_DNI) << "\tDNI" << std::setw(ANCHO_NOMBRE)
+        std::cout << BOLD << std::left << std::setw(ANCHO_DNI) << "\tDNI" << std::setw(ANCHO_NOMBRE)
                   << "Nombre" << std::setw(ANCHO_TELEFONO) << "Telefono"
-                  << std::setw(ANCHO_DIRECCION) << "Direccion" << std::endl;
+                  << std::setw(ANCHO_DIRECCION) << "Direccion" << RESET << std::endl;
         std::string dni, nombre, telefono, direccion;
         std::vector<std::string> clientes = hotel.informacion_clientes_registrados();
         for (std::string cliente: clientes) {
@@ -499,10 +499,10 @@ void Launcher::pantalla_clientes_registrados() {
             getline(ss, telefono, ',');
             getline(ss, direccion);
             std::cout << BOLD << std::left << std::setw(ANCHO_DNI)
-                      << "\t" + recortarCampo(dni, ANCHO_DNI) << std::setw(ANCHO_NOMBRE)
+                      << "\t" + recortarCampo(dni, ANCHO_DNI) << RESET << std::setw(ANCHO_NOMBRE)
                       << recortarCampo(nombre, ANCHO_NOMBRE) << std::setw(ANCHO_TELEFONO)
                       << recortarCampo(telefono, ANCHO_TELEFONO) << std::setw(ANCHO_DIRECCION)
-                      << recortarCampo(direccion, ANCHO_DIRECCION) << RESET << std::endl;
+                      << recortarCampo(direccion, ANCHO_DIRECCION) << std::endl;
         }
     }
     std::cout << std::endl;

@@ -135,6 +135,7 @@ TEST_F(HotelTest, EliminarHabitacion){
 }
 
 int main(int argc, char*argv[]){
+    std::cout << "Tests Hotel" << std::endl;
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }

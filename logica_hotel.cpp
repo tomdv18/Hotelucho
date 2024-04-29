@@ -14,6 +14,7 @@ Logica_Hotel::Logica_Hotel(int& ocupacion, int& capacidad, int& porcentaje_ocupa
         habitaciones(habitaciones),
         clientes(clientes) {}
 
+/*-- -- -- MANEJO DE HABITACIONES -- -- --*/
 int Logica_Hotel::agregar_habitacion(const int numero, const int piso,
                                      const int capacidadHabitacion) {
     if (!existe_habitacion(numero, piso)) {
@@ -44,10 +45,6 @@ int Logica_Hotel::eliminar_habitacion(const int numero, const int piso) {
     }
     return ERROR;
 }
-bool Logica_Hotel::existe_cliente(const int dni) {
-    return std::any_of(clientes.begin(), clientes.end(),
-                       [dni](const Cliente& c) { return c.get_dni() == dni; });
-}
 
 bool Logica_Hotel::existe_habitacion(int numero, int piso) {
     return std::any_of(habitaciones.begin(), habitaciones.end(),
@@ -56,20 +53,42 @@ bool Logica_Hotel::existe_habitacion(int numero, int piso) {
                        });
 }
 
-void Logica_Hotel::actualizar_ocupacion() {
-    int ocupacion = 0;
-    for (Habitacion& hab: habitaciones) {
-        if (!hab.esta_disponible() && !hab.en_mantenimiento()) {
-            ocupacion = ocupacion + hab.get_capacidad();
-        }
+bool Logica_Hotel::habitacion_en_mantenimiento(int numero, int piso) {
+    if (!existe_habitacion(numero, piso)) {
+        throw std::runtime_error("Habitacion no existe");
     }
-    this->ocupacion = ocupacion;
-    if (capacidad != 0) {
-        porcentajeOcupacion = ocupacion * 100 / capacidad;
-    } else {
-        porcentajeOcupacion = 0;
-    }
+    Habitacion* habitacion = get_habitacion(numero, piso);
+    return habitacion->en_mantenimiento();
 }
+
+
+bool Logica_Hotel::habitacion_disponible(int numero, int piso) {
+    if (!existe_habitacion(numero, piso)) {
+        throw std::runtime_error("Habitacion no existe");
+    }
+    Habitacion* habitacion = get_habitacion(numero, piso);
+    return habitacion->esta_disponible();
+}
+
+int Logica_Hotel::comenzar_mantenimiento(int numero, int piso) {
+    if (!existe_habitacion(numero, piso)) {
+        return ERROR;
+    }
+    Habitacion* hab = get_habitacion(numero, piso);
+    hab->comenzar_mantenimiento();
+    return 0;
+}
+
+int Logica_Hotel::terminar_mantenimiento(int numero, int piso) {
+    if (!existe_habitacion(numero, piso)) {
+        return ERROR;
+    }
+    Habitacion* hab = get_habitacion(numero, piso);
+    hab->terminar_mantenimiento();
+    return 0;
+}
+
+/*-- -- -- MANEJO DE RESERVAS -- -- --*/
 
 int Logica_Hotel::crear_reserva(int numero, int piso, int dni_cliente, const std::string& nombre,
                                 int telefonoCl, const std::string& direccion) {
@@ -98,38 +117,12 @@ int Logica_Hotel::finalizar_reserva(int numero, int piso) {
     return 0;
 }
 
-int Logica_Hotel::comenzar_mantenimiento(int numero, int piso) {
-    if (!existe_habitacion(numero, piso)) {
-        return ERROR;
-    }
-    Habitacion* hab = get_habitacion(numero, piso);
-    hab->comenzar_mantenimiento();
-    return 0;
-}
+/*-- -- -- MANEJO DE CLIENTES -- -- --*/
 
-int Logica_Hotel::terminar_mantenimiento(int numero, int piso) {
-    if (!existe_habitacion(numero, piso)) {
-        return ERROR;
-    }
-    Habitacion* hab = get_habitacion(numero, piso);
-    hab->terminar_mantenimiento();
-    return 0;
-}
-
-bool Logica_Hotel::habitacion_disponible(int numero, int piso) {
-    if (!existe_habitacion(numero, piso)) {
-        throw std::runtime_error("Habitacion no existe");
-    }
-    Habitacion* habitacion = get_habitacion(numero, piso);
-    return habitacion->esta_disponible();
-}
-
-bool Logica_Hotel::habitacion_en_mantenimiento(int numero, int piso) {
-    if (!existe_habitacion(numero, piso)) {
-        throw std::runtime_error("Habitacion no existe");
-    }
-    Habitacion* habitacion = get_habitacion(numero, piso);
-    return habitacion->en_mantenimiento();
+void Logica_Hotel::registrar_cliente(int dni, const std::string& nombre, int telefono,
+                                     const std::string& direccion) {
+    Cliente nuevo(dni, nombre, telefono, direccion);
+    clientes.emplace_back(nuevo);
 }
 
 void Logica_Hotel::modificar_cliente(int dni, const std::string& telefono,
@@ -144,6 +137,11 @@ void Logica_Hotel::modificar_cliente(int dni, const std::string& telefono,
             }
         }
     }
+}
+
+bool Logica_Hotel::existe_cliente(const int dni) {
+    return std::any_of(clientes.begin(), clientes.end(),
+                       [dni](const Cliente& c) { return c.get_dni() == dni; });
 }
 
 bool Logica_Hotel::eliminar_cliente(int dni) {
@@ -161,13 +159,7 @@ bool Logica_Hotel::eliminar_cliente(int dni) {
     return false;
 }
 
-void Logica_Hotel::registrar_cliente(int dni, const std::string& nombre, int telefono,
-                                     const std::string& direccion) {
-    Cliente nuevo(dni, nombre, telefono, direccion);
-    clientes.emplace_back(nuevo);
-}
-
-/*METODOS PRIVADOS PARA REUTILIZAR CODIGO*/
+/*-- -- -- METODOS PRIVADOS PARA REUTILIZAR CODIGO -- -- --*/
 
 Habitacion* Logica_Hotel::get_habitacion(int numero, int piso) {
     auto it = std::find_if(habitaciones.begin(), habitaciones.end(),
@@ -183,4 +175,18 @@ Cliente* Logica_Hotel::get_cliente(int dni) {
                            [dni](const Cliente& cli) { return cli.get_dni() == dni; });
 
     return (it != clientes.end()) ? &(*it) : nullptr;
+}
+void Logica_Hotel::actualizar_ocupacion() {
+    int ocupacion = 0;
+    for (Habitacion& hab: habitaciones) {
+        if (!hab.esta_disponible() && !hab.en_mantenimiento()) {
+            ocupacion = ocupacion + hab.get_capacidad();
+        }
+    }
+    this->ocupacion = ocupacion;
+    if (capacidad != 0) {
+        porcentajeOcupacion = ocupacion * 100 / capacidad;
+    } else {
+        porcentajeOcupacion = 0;
+    }
 }

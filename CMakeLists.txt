@@ -5,4 +5,4 @@ project(Hotel)
 include_directories(${CMAKE_SOURCE_DIR})
 
 add_subdirectory(tests)
-add_subdirectory(external/googletest)
+add_subdirectory(extern/googletest)

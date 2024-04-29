@@ -58,7 +58,14 @@ void Hotel::actualizar_ocupacion() {
         }
     }
     this->ocupacion = ocupacion;
-    porcentajeOcupacion = ocupacion * 100 / capacidad;
+    if (capacidad != 0){
+       porcentajeOcupacion = ocupacion * 100 / capacidad;
+    }
+    else {
+        porcentajeOcupacion = 0;
+    }
+    
+    
 }
 
 int Hotel::crear_reserva(int numero, int piso, int dni_cliente, const std::string& nombre,

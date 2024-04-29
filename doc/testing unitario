@@ -1,0 +1,12 @@
+En el directorio principal abrir una terminal y ejecutar:
+
+
+    mkdir build
+    cd build/
+    cmake ..
+    make
+
+Y ejecutar    
+    ./test/<Nombre del test> 
+
+Para cada test

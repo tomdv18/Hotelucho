@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/test_hotel.dir/test_hotel.cpp.o CMakeFiles/test_hotel.dir/__/hotel.cpp.o CMakeFiles/test_hotel.dir/__/habitacion.cpp.o CMakeFiles/test_hotel.dir/__/cliente.cpp.o -o test_hotel  ../lib/libgtest.a ../lib/libgtest_main.a ../lib/libgtest.a 

@@ -7,135 +7,50 @@
 #define ERROR -1
 
 Hotel::Hotel(const std::string& nombreHotel):
-        nombre(nombreHotel), ocupacion(0), capacidad(0), porcentajeOcupacion(0) {}
+        nombre(nombreHotel),
+        ocupacion(0),
+        capacidad(0),
+        porcentajeOcupacion(0),
+        lhotel(ocupacion, capacidad, porcentajeOcupacion, habitaciones, clientes) {}
 
 int Hotel::agregar_habitacion(const int numero, const int piso, const int capacidadHabitacion) {
-    if (!existe_habitacion(numero, piso)) {
-        Habitacion nuevaHab(numero, piso, capacidadHabitacion);
-        habitaciones.emplace_back(nuevaHab);
-        capacidad = capacidadHabitacion + capacidad;
-        actualizar_ocupacion();
-        return 0;
-    }
-    return ERROR;
+    return lhotel.agregar_habitacion(numero, piso, capacidadHabitacion);
 }
 
 int Hotel::eliminar_habitacion(const int numero, const int piso) {
-    if (!existe_habitacion(numero, piso)) {
-        return ERROR;
-    }
+    return lhotel.eliminar_habitacion(numero, piso);
+}
 
-    if (!habitacion_disponible(numero, piso)) {
-        return ERROR;
-    }
-    for (auto hab = habitaciones.begin(); hab != habitaciones.end(); ++hab) {
-        if (hab->get_numero() == numero && hab->get_piso() == piso) {
-            capacidad = capacidad - hab->get_capacidad();
-            habitaciones.erase(hab);
-            actualizar_ocupacion();
-            return 0;
-        }
-    }
-    return ERROR;
-}
-bool Hotel::existe_cliente(const int dni) {
-    return std::any_of(clientes.begin(), clientes.end(),
-                       [dni](const Cliente& c) { return c.get_dni() == dni; });
-}
+bool Hotel::existe_cliente(const int dni) { return lhotel.existe_cliente(dni); }
 
 bool Hotel::existe_habitacion(int numero, int piso) {
-    return std::any_of(habitaciones.begin(), habitaciones.end(),
-                       [numero, piso](const Habitacion& hab) {
-                           return hab.get_numero() == numero && hab.get_piso() == piso;
-                       });
-}
-
-void Hotel::actualizar_ocupacion() {
-    int ocupacion = 0;
-    for (Habitacion& hab: habitaciones) {
-        if (!hab.esta_disponible() && !hab.en_mantenimiento()) {
-            ocupacion = ocupacion + hab.get_capacidad();
-        }
-    }
-    this->ocupacion = ocupacion;
-    if (capacidad != 0){
-       porcentajeOcupacion = ocupacion * 100 / capacidad;
-    }
-    else {
-        porcentajeOcupacion = 0;
-    }
-    
-    
+    return lhotel.existe_habitacion(numero, piso);
 }
 
 int Hotel::crear_reserva(int numero, int piso, int dni_cliente, const std::string& nombre,
                          int telefonoCl, const std::string& direccion) {
-    if (!existe_habitacion(numero, piso))
-        return ERROR;
-    if (!existe_cliente(dni_cliente)) {
-        registrar_cliente(dni_cliente, nombre, telefonoCl, direccion);
-    }
-    if (habitacion_disponible(numero, piso)) {
-        Habitacion* habitacion_reservada = get_habitacion(numero, piso);
-        Cliente* cliente_reserva = get_cliente(dni_cliente);
-        habitacion_reservada->reservar(cliente_reserva);
-        actualizar_ocupacion();
-        return 0;
-    }
-    return ERROR;
+
+    return lhotel.crear_reserva(numero, piso, dni_cliente, nombre, telefonoCl, direccion);
 }
 
 int Hotel::finalizar_reserva(int numero, int piso) {
-    if (!existe_habitacion(numero, piso)) {
-        return ERROR;
-    }
-    Habitacion* hab = get_habitacion(numero, piso);
-    hab->terminar_reserva();
-    actualizar_ocupacion();
-    return 0;
+    return lhotel.finalizar_reserva(numero, piso);
 }
 
 int Hotel::comenzar_mantenimiento(int numero, int piso) {
-    if (!existe_habitacion(numero, piso)) {
-        return ERROR;
-    }
-    Habitacion* hab = get_habitacion(numero, piso);
-    hab->comenzar_mantenimiento();
-    return 0;
+    return lhotel.comenzar_mantenimiento(numero, piso);
 }
 
 int Hotel::terminar_mantenimiento(int numero, int piso) {
-    if (!existe_habitacion(numero, piso)) {
-        return ERROR;
-    }
-    Habitacion* hab = get_habitacion(numero, piso);
-    hab->terminar_mantenimiento();
-    return 0;
+    return lhotel.terminar_mantenimiento(numero, piso);
 }
 
 bool Hotel::habitacion_disponible(int numero, int piso) {
-    if (!existe_habitacion(numero, piso)) {
-        throw std::runtime_error("Habitacion no existe");
-    }
-    Habitacion* habitacion = get_habitacion(numero, piso);
-    return habitacion->esta_disponible();
+    return lhotel.habitacion_disponible(numero, piso);
 }
 
 bool Hotel::habitacion_en_mantenimiento(int numero, int piso) {
-    if (!existe_habitacion(numero, piso)) {
-        throw std::runtime_error("Habitacion no existe");
-    }
-    Habitacion* habitacion = get_habitacion(numero, piso);
-    return habitacion->en_mantenimiento();
-}
-
-std::vector<int> Hotel::habitaciones_por_piso(int piso) {
-    std::vector<int> habitaciones_piso;
-    for (Habitacion& hab: habitaciones) {
-        if (hab.get_piso() == piso)
-            habitaciones_piso.push_back(hab.get_numero());
-    }
-    return habitaciones_piso;
+    return lhotel.habitacion_en_mantenimiento(numero, piso);
 }
 
 std::vector<std::string> Hotel::habitaciones_disponibles() {
@@ -236,32 +151,10 @@ std::vector<int> Hotel::dni_clientes_registrados() {
     return vector;
 }
 void Hotel::modificar_cliente(int dni, const std::string& telefono, const std::string& direccion) {
-    for (Cliente& cli: clientes) {
-        if (cli.get_dni() == dni) {
-            if (telefono != "0") {
-                cli.cambiar_telefono(std::stoi(telefono));
-            }
-            if (direccion != "0") {
-                cli.cambiar_direccion(direccion);
-            }
-        }
-    }
+    lhotel.modificar_cliente(dni, telefono, direccion);
 }
 
-bool Hotel::eliminar_cliente(int dni) {
-    if (std::any_of(habitaciones.begin(), habitaciones.end(),
-                    [dni](const Habitacion& hab) { return hab.get_dni_cliente() == dni; })) {
-        return false;
-    }
-    auto it = std::find_if(clientes.begin(), clientes.end(),
-                           [dni](const Cliente& cli) { return cli.get_dni() == dni; });
-
-    if (it != clientes.end()) {
-        clientes.erase(it);
-        return true;
-    }
-    return false;
-}
+bool Hotel::eliminar_cliente(int dni) { return lhotel.eliminar_cliente(dni); }
 
 std::vector<std::string> Hotel::informacion_clientes_registrados() {
     std::vector<std::string> vector;
@@ -294,24 +187,7 @@ std::vector<std::string> Hotel::informacion_clientes_registrados() {
 }
 void Hotel::registrar_cliente(int dni, const std::string& nombre, int telefono,
                               const std::string& direccion) {
-    Cliente nuevo(dni, nombre, telefono, direccion);
-    clientes.emplace_back(nuevo);
-}
-
-Habitacion* Hotel::get_habitacion(int numero, int piso) {
-    auto it = std::find_if(habitaciones.begin(), habitaciones.end(),
-                           [numero, piso](const Habitacion& hab) {
-                               return hab.get_numero() == numero && hab.get_piso() == piso;
-                           });
-
-    return (it != habitaciones.end()) ? &(*it) : nullptr;
-}
-
-Cliente* Hotel::get_cliente(int dni) {
-    auto it = std::find_if(clientes.begin(), clientes.end(),
-                           [dni](const Cliente& cli) { return cli.get_dni() == dni; });
-
-    return (it != clientes.end()) ? &(*it) : nullptr;
+    lhotel.registrar_cliente(dni, nombre, telefono, direccion);
 }
 
 int Hotel::cantidad_habitaciones() { return habitaciones.size(); }

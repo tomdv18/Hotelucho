@@ -5,6 +5,7 @@
 
 #include "cliente.h"
 #include "habitacion.h"
+#include "logica_hotel.h"
 
 struct info_habitacion {
     // cppcheck-suppress unusedStructMember
@@ -27,10 +28,7 @@ private:
     int porcentajeOcupacion;
     std::vector<Habitacion> habitaciones;
     std::vector<Cliente> clientes;
-
-    Habitacion* get_habitacion(int numero, int piso);
-    Cliente* get_cliente(int dni);
-    void actualizar_ocupacion();
+    Logica_Hotel lhotel;
 
 public:
     explicit Hotel(const std::string& nombre);
@@ -57,8 +55,6 @@ public:
     bool habitacion_en_mantenimiento(int numero, int piso);
 
     info_habitacion informacion_habitacion(int numero, int piso);
-
-    std::vector<int> habitaciones_por_piso(int piso);
 
     std::vector<std::string> habitaciones_disponibles();
 

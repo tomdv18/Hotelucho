@@ -8,6 +8,7 @@ Lector_Archivo::Lector_Archivo(const std::string& nombreArchivo, Hotel& hotel):
         nombreArchivo(nombreArchivo), hotel(hotel) {}
 
 void Lector_Archivo::inicializar_desde_archivo(const std::string& nombreArchivo) {
+    std::cout << "Leyendo archivo..." << std::endl;
     std::ifstream archivo(nombreArchivo);
     if (!archivo.is_open()) {
         std::cerr << "Error: No se pudo abrir el archivo: " << nombreArchivo << std::endl;
@@ -52,4 +53,5 @@ void Lector_Archivo::inicializar_desde_archivo(const std::string& nombreArchivo)
     }
 
     archivo.close();
+    std::cout << "Archivo leido con exito" << std::endl;
 }

@@ -13,4 +13,4 @@ target_link_libraries(test_hotel PRIVATE GTest::gtest GTest::gtest_main)
 
 target_sources(test_cliente PRIVATE ${CMAKE_SOURCE_DIR}/cliente.cpp)
 target_sources(test_habitacion PRIVATE ${CMAKE_SOURCE_DIR}/habitacion.cpp ${CMAKE_SOURCE_DIR}/cliente.cpp)
-target_sources(test_hotel PRIVATE  ${CMAKE_SOURCE_DIR}/hotel.cpp ${CMAKE_SOURCE_DIR}/habitacion.cpp ${CMAKE_SOURCE_DIR}/cliente.cpp)
+target_sources(test_hotel PRIVATE  ${CMAKE_SOURCE_DIR}/hotel.cpp ${CMAKE_SOURCE_DIR}/logica_hotel.cpp ${CMAKE_SOURCE_DIR}/habitacion.cpp ${CMAKE_SOURCE_DIR}/cliente.cpp)

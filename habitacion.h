@@ -38,18 +38,6 @@ public:
     int get_numero() const;
 
     int get_capacidad() const;
-
-    /*
-     * No queremos permitir que alguien haga copias
-
-    Habitacion(const Habitacion&) = delete;
-    Habitacion& operator=(const Habitacion&) = delete;
-
-    //Move semantics
-    Habitacion(Habitacion&&) = default;
-    Habitacion& operator=(Habitacion&&) = default;
-
-    */
 };
 
 #endif

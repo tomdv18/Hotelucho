@@ -36,6 +36,14 @@ public:
     explicit Launcher(const std::string& nombre);
     int run();
     void leer(const std::string& nombreArchivo);
+
+    /*No copias*/
+    Launcher(const Launcher&) = delete;
+    Launcher& operator=(const Launcher&) = delete;
+
+    /*Move semantics*/
+    Launcher(Launcher&&) = default;
+    Launcher& operator=(Launcher&&) = default;
 };
 
 #endif

@@ -23,16 +23,5 @@ public:
     std::string get_nombre() const;
 
     std::string get_direccion() const;
-    /*
-     * No queremos permitir que alguien haga copias
-
-    Cliente(const Cliente&) = delete;
-    Cliente& operator=(const Cliente&) = delete;
-
-    //Move semantics
-    Cliente(Cliente&&) = default;
-    Cliente& operator=(Cliente&&) = default;
-    */
 };
-
 #endif

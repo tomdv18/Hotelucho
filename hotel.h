@@ -6,11 +6,15 @@
 #include "cliente.h"
 #include "habitacion.h"
 
-struct info_habitacion{
+struct info_habitacion {
+    // cppcheck-suppress unusedStructMember
     int numero;
+    // cppcheck-suppress unusedStructMember
     int piso;
+    // cppcheck-suppress unusedStructMember
     int capacidad;
     std::string estado;
+    // cppcheck-suppress unusedStructMember
     int dni_cliente;
     std::string nombre_cliente;
 };
@@ -23,16 +27,16 @@ private:
     int porcentajeOcupacion;
     std::vector<Habitacion> habitaciones;
     std::vector<Cliente> clientes;
-    
-    Habitacion  * get_habitacion(int numero, int piso);
-    Cliente *  get_cliente(int dni);
+
+    Habitacion* get_habitacion(int numero, int piso);
+    Cliente* get_cliente(int dni);
     void actualizar_ocupacion();
 
 public:
-    Hotel(std::string nombre);
+    explicit Hotel(const std::string& nombre);
 
     int agregar_habitacion(int numero, int piso, int capacidad);
-    
+
     int eliminar_habitacion(const int numero, const int piso);
 
     int comenzar_mantenimiento(int numero, int piso);
@@ -43,7 +47,8 @@ public:
 
     bool existe_habitacion(int numero, int piso);
 
-    int crear_reserva(int numero, int piso, int dni_cliente, std::string nombre, int telefonoCl,std::string direccion);
+    int crear_reserva(int numero, int piso, int dni_cliente, const std::string& nombre,
+                      int telefonoCl, const std::string& direccion);
 
     bool existe_cliente(const int dni);
 
@@ -56,7 +61,7 @@ public:
     std::vector<int> habitaciones_por_piso(int piso);
 
     std::vector<std::string> habitaciones_disponibles();
-    
+
     std::vector<std::string> habitaciones_status();
 
     std::vector<std::string> informacion_clientes_registrados();
@@ -65,9 +70,10 @@ public:
 
     bool eliminar_cliente(int dni);
 
-    void modificar_cliente(int dni, std::string telefono, std::string direccion);
+    void modificar_cliente(int dni, const std::string& telefono, const std::string& direccion);
 
-    void registrar_cliente(int dni, std::string nombre, int telefono, std::string direccion);
+    void registrar_cliente(int dni, const std::string& nombre, int telefono,
+                           const std::string& direccion);
 
     int cantidad_clientes_registrados();
 
@@ -81,7 +87,6 @@ public:
 
     std::string get_nombre();
 
-
     /*
      * No queremos permitir que alguien haga copias
      */
@@ -92,6 +97,5 @@ public:
     Hotel(Hotel&&) = default;
     Hotel& operator=(Hotel&&) = default;
 };
-
 
 #endif

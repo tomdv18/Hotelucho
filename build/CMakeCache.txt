@@ -323,6 +323,15 @@ googletest-distribution_IS_TOP_LEVEL:STATIC=OFF
 googletest-distribution_SOURCE_DIR:STATIC=/home/tom/Desktop/Hotel/Hotelucho/external/googletest
 
 //Value Computed by CMake
+googletest_BINARY_DIR:STATIC=/home/tom/Desktop/Hotel/Hotelucho/build/external/googletest
+
+//Value Computed by CMake
+googletest_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+googletest_SOURCE_DIR:STATIC=/home/tom/Desktop/Hotel/Hotelucho/external/googletest
+
+//Value Computed by CMake
 gtest_BINARY_DIR:STATIC=/home/tom/Desktop/Hotel/Hotelucho/build/external/googletest/googletest
 
 //Value Computed by CMake
@@ -488,7 +497,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

@@ -1,10 +1,11 @@
-#include <iostream>
-#include <fstream>
-#include <sstream>
 #include "lector_archivo.h"
 
-Lector_Archivo::Lector_Archivo(const std::string& nombreArchivo, Hotel &hotel) : nombreArchivo(nombreArchivo), hotel(hotel) {
-}
+#include <fstream>
+#include <iostream>
+#include <sstream>
+
+Lector_Archivo::Lector_Archivo(const std::string& nombreArchivo, Hotel& hotel):
+        nombreArchivo(nombreArchivo), hotel(hotel) {}
 
 void Lector_Archivo::inicializar_desde_archivo(const std::string& nombreArchivo) {
     std::ifstream archivo(nombreArchivo);
@@ -34,18 +35,19 @@ void Lector_Archivo::inicializar_desde_archivo(const std::string& nombreArchivo)
             std::getline(ss, estado);
 
             hotel.agregar_habitacion(stoi(numero), stoi(piso), stoi(capacidad));
-            if (estado == "2"){
+            if (estado == "2") {
                 hotel.comenzar_mantenimiento(stoi(numero), stoi(piso));
             }
         } else if (tipo == "RESERVA") {
-            std::string numero, piso, dni, nombre, telefono,direccion;
+            std::string numero, piso, dni, nombre, telefono, direccion;
             std::getline(ss, numero, ',');
             std::getline(ss, piso, ',');
             std::getline(ss, dni, ',');
             std::getline(ss, nombre, ',');
             std::getline(ss, telefono, ',');
             std::getline(ss, direccion);
-            hotel.crear_reserva(stoi(numero), stoi(piso), stoi(dni), nombre, stoi(telefono), direccion);
+            hotel.crear_reserva(stoi(numero), stoi(piso), stoi(dni), nombre, stoi(telefono),
+                                direccion);
         }
     }
 

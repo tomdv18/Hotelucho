@@ -1,12 +1,10 @@
 #ifndef HABITACION_H
 #define HABITACION_H
+#include <string>
+
 #include "cliente.h"
 
-enum estado_habitacion{
-    disponible,
-    ocupado,
-    mantenimiento
-};
+enum estado_habitacion { disponible, ocupado, mantenimiento };
 
 class Habitacion {
 private:
@@ -14,8 +12,7 @@ private:
     int piso;
     int capacidad;
     estado_habitacion estado;
-    Cliente * clienteActual;
-    
+    Cliente* clienteActual;
 
 public:
     Habitacion(int numero, int piso, int capacidad);
@@ -30,22 +27,21 @@ public:
 
     void terminar_reserva();
 
-    void reservar(Cliente * clienteReserva);
+    void reservar(Cliente* clienteReserva);
 
-    int get_dni_cliente();
+    int get_dni_cliente() const;
 
-    bool get_nombre_cliente(std::string &nombre);
+    bool get_nombre_cliente(std::string& nombre) const;
 
-    int get_piso();
+    int get_piso() const;
 
-    int get_numero();
+    int get_numero() const;
 
-    int get_capacidad();
-
+    int get_capacidad() const;
 
     /*
      * No queremos permitir que alguien haga copias
-    
+
     Habitacion(const Habitacion&) = delete;
     Habitacion& operator=(const Habitacion&) = delete;
 
@@ -55,6 +51,5 @@ public:
 
     */
 };
-
 
 #endif

@@ -3,9 +3,9 @@
 #include <string>
 #include <vector>
 
-class Validador{
- private:
- public:
+class Validador {
+private:
+public:
     Validador();
     bool nombre_valido(std::string nombre);
     bool telefono_valido(std::string numero);
@@ -14,4 +14,3 @@ class Validador{
     bool dato_habitacion_valido(std::string dato);
 };
 #endif
-

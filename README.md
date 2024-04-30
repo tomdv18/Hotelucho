@@ -30,11 +30,12 @@ Tambien se almacena la información de cada cliente que haya efectuado alguna re
 
 ## Testing
 
-Incluye tests unitarios (+30 en total) para cada clase creada, utilizando GoogleTest https://github.com/google/googletest en conjunto con CMake
+Incluye tests unitarios (+40 en total) para cada clase creada, utilizando GoogleTest https://github.com/google/googletest en conjunto con CMake
 
 Para información sobre como testear ver la carpeta doc.
 
 ![img](/doc/tests_pasando.png?raw=true "img")
+
 Tests sobre la clase Hotel
 
 ## Compilacion
